@@ -1,0 +1,30 @@
+models:
+  image: tp33/django
+  container_name: models
+  external_links:
+    - mysql:db
+  volumes:
+    - ./back_end:/app
+  ports:
+    - "8001:8000"
+  command: bash -c "pip install --upgrade pip &&
+                    pip install djangorestframework && 
+                    python ./manage.py makemigrations &&
+                    python ./manage.py migrate &&
+                    python ./manage.py makemigrations models &&
+                    python ./manage.py migrate models &&
+                    mod_wsgi-express start-server --working-directory /app/ --reload-on-changes /app/models/wsgi.py"
+
+
+front-end:
+  image: tp33/django
+  container_name: front-end
+  links:
+    - "models:models-api"
+  volumes:
+    - ./front_end/mysite:/app
+  ports:
+    - "8000:8000"
+  command: bash -c "pip install --upgrade pip &&
+                    pip install djangorestframework &&
+                    mod_wsgi-express start-server --working-directory /app --reload-on-changes /app/mysite/wsgi.py"

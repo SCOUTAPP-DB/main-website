@@ -21,5 +21,9 @@ from . import views
 urlpatterns = [
     path('data_req/', views.get_csv),
     # path('test/', views.get_cases),
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('circuit_civil/', views.circuit_civil, name='circuit_civil'),
+    path('circuit_criminal/', views.circuit_criminal, name='circuit_criminal'),
+    path('district_civil/', views.district_civil, name='district_civil'),
+    path('district_criminal/', views.district_criminal, name='district_criminal'),
 ]

@@ -19,6 +19,27 @@ def index(request):
     html = t.render({"district_courts":court_list(request, "District"),"circuit_courts":court_list(request, "Circuit")})
     return HttpResponse(html)
 
+def circuit_civil(request):
+    t = template.loader.get_template('circuit_civil.html')
+    html = t.render()
+    return HttpResponse(html)
+
+def circuit_criminal(request):
+    t = template.loader.get_template('circuit_civil.html')
+    html = t.render()
+    return HttpResponse(html)
+
+def district_civil(request):
+    t = template.loader.get_template('circuit_civil.html')
+    html = t.render()
+    return HttpResponse(html)
+
+def district_criminal(request):
+    t = template.loader.get_template('circuit_civil.html')
+    html = t.render()
+    return HttpResponse(html)
+
+
 
 def court_list(request, typeofcourt):
     crim_courts_req = urllib.request.Request('http://models-api:8000/crim/unique_in_columns?column=court')
@@ -27,7 +48,7 @@ def court_list(request, typeofcourt):
     civil_json = json.loads(urllib.request.urlopen(civil_courts_req).read().decode('utf-8'))
     keys = crim_json[0].keys()
     all_courts = []
-    
+
     for obj in crim_json:
         for key in keys:
             if obj[key] not in all_courts:
@@ -119,10 +140,9 @@ def get_csv(request):
                 writer.writerow([d[k] for k in keys])
         resper.seek(0)
         f.writestr("{}.csv".format(name), resper.read())
-    
+
     f.close()
     # Build your response
     response = HttpResponse(output.getvalue(), content_type='application/zip')
     response['Content-Disposition'] = 'attachment; filename="output.zip"'
     return response
-        

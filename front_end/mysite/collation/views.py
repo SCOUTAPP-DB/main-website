@@ -25,7 +25,7 @@ def circuit_civil(request):
     return HttpResponse(html)
 
 def circuit_criminal(request):
-    t = template.loader.get_template('circuit_civil.html')
+    t = template.loader.get_template('circuit_criminal.html')
     html = t.render()
     return HttpResponse(html)
 

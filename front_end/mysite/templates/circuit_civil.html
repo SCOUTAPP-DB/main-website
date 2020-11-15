@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Courts Data Project</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -20,1523 +22,990 @@
           <li><a href="#">How to contribute to the project</a></li>
           <li><a href="#">Data Access Request</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Dictionaries<span class="caret"></span></a>
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Data Dictionaries<span class="caret"></span
+            ></a>
             <ul class="dropdown-menu">
               <li><a href="{% url 'circuit_civil' %}">Circuit Civil</a></li>
-              <li><a href="{% url 'circuit_criminal' %}">Circuit Criminal</a></li>
+              <li>
+                <a href="{% url 'circuit_criminal' %}">Circuit Criminal</a>
+              </li>
               <li><a href="{% url 'district_civil' %}">District Civil</a></li>
-              <li><a href="{% url 'district_criminal' %}">District Criminal</a></li>
+              <li>
+                <a href="{% url 'district_criminal' %}">District Criminal</a>
+              </li>
             </ul>
           </li>
         </ul>
       </div>
     </nav>
-    <div class="panel panel-default" style="width:800px;margin:auto; margin-bottom:50px">
+    <div
+      class="panel panel-default"
+      style="width: 800px; margin: auto; margin-bottom: 50px"
+    >
       <!-- Default panel contents -->
       <div class="panel-heading">AppealedDate</div>
       <table class="table">
         <tr>
-          <th style="width:120px;">Description:</th>
-          <td style="width:680px;">
-            Date of appeal (from district court?) – a case
-            can be appealed from a district court to a circuit
-            court, or from a circuit court to either the Court
-            of Appeals or to the Supreme Court of Virginia. A
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Date of appeal (from district court?) – a case can be appealed from
+            a district court to a circuit court, or from a circuit court to
+            either the Court of Appeals or to the Supreme Court of Virginia. A
             case can be appealed multiple times.
           </td>
         </tr>
         <tr>
           <th>Variable Type:</th>
-          <td>
-            Date (YYYY-MM-DD)
-          </td>
+          <td>Date (YYYY-MM-DD)</td>
         </tr>
       </table>
-      <div class="panel-heading" style="margin-top:25px">Bond</div>
+      <div class="panel-heading" style="margin-top: 25px">Bond</div>
       <table class="table">
         <tr>
-          <th style="width:120px;">Description:</th>
-          <td style="width:680px;">
-            Bond amount in dollars.
-          </td>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Bond amount in dollars.</td>
         </tr>
         <tr>
           <th>Variable Type:</th>
-          <td>
-            String.  Data includes “$” but otherwise is a float.
-          </td>
+          <td>String. Data includes “$” but otherwise is a float.</td>
         </tr>
         <tr>
           <th>Values:</th>
           <td>
-            NaN : No entry. <br> $0 - $2,600,000
+            NaN : No entry. <br />
+            $0 - $2,600,000
           </td>
         </tr>
       </table>
-      <div class="panel-heading" style="margin-top:25px">CommencedBy</div>
+      <div class="panel-heading" style="margin-top: 25px">CommencedBy</div>
       <table class="table">
         <tr>
-          <th style="width:120px;">Description:</th>
-          <td style="width:680px;">
-            Describes how the case was commenced.
-          </td>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Describes how the case was commenced.</td>
         </tr>
         <tr>
           <th>Variable Type:</th>
-          <td>
-          String
-          </td>
+          <td>String</td>
         </tr>
         <tr>
           <th>Values:</th>
           <td>
             Field takes one of the following values:
+            <p></p>
             <p>
-              <p>
-                ●
-                General District Court Appeal – In circuit
-                court, a case that is an appeal from a
-                decision made by the general district
-                court.
-              </p>
-              <p>
-                ●
-                Initial Filing – the first filing in a particular
-                case.
-              </p>
-              <p>
-                ●
-                Jdr Court Appeal – An appeal from a
-                decision in the Juvenile or Domestic
-                Relations court.
-              </p>
-              <p>
-                ●
-                Other
-              </p>
-              <p>
-                ●
-                Reinstatement – a request by a party to
-                restore some right or benefit that has
-                been taken from them. For example, a
-                request to restore driving privileges or
-                custody of a child.
-              </p>
-              <p>
-                ●
-                Transferred – A case that was transferred
-                from another court.
-              </p>
-              <p>
-                ●
-                NaN : No entry.
-              </p>
+              ● General District Court Appeal – In circuit court, a case that is
+              an appeal from a decision made by the general district court.
             </p>
+            <p>● Initial Filing – the first filing in a particular case.</p>
+            <p>
+              ● Jdr Court Appeal – An appeal from a decision in the Juvenile or
+              Domestic Relations court.
+            </p>
+            <p>● Other</p>
+            <p>
+              ● Reinstatement – a request by a party to restore some right or
+              benefit that has been taken from them. For example, a request to
+              restore driving privileges or custody of a child.
+            </p>
+            <p>
+              ● Transferred – A case that was transferred from another court.
+            </p>
+            <p>● NaN : No entry.</p>
           </td>
         </tr>
       </table>
-      <div class="panel-heading" style="margin-top:25px">ComplexCase</div>
+      <div class="panel-heading" style="margin-top: 25px">ComplexCase</div>
       <table class="table">
         <tr>
-          <th style="width:120px;">Description:</th>
-          <td style="width:680px;">
-            A designation by the court that entitles a case
-            to special treatment, including assignment to a
-            particular judge.
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            A designation by the court that entitles a case to special
+            treatment, including assignment to a particular judge.
           </td>
         </tr>
         <tr>
           <th>Variable Type:</th>
-          <td>
-            String.
-          </td>
+          <td>String.</td>
         </tr>
         <tr>
           <th>Values:</th>
           <td>
             Field takes one of the following values:
+            <p></p>
             <p>
-              <p>
-                ●
-                Bankruptcy - a debtor files a bankruptcy
-                petition with the court when they cannot
-                repay their outstanding debts.
-              </p>
-              <p>
-                ●
-                Complex - cases that require more
-                intensive judicial management (i.e. many
-                attorneys, many parties, complicated
-                subject matter, many expert witnesses,
-                extensive discovery, parties from many
-                jurisdictions).
-              </p>
-              <p>
-                ●
-                Habitual Offender - a D who has been
-                convicted of multiple offenses may be
-                declared a habitual offender. Once you
-                are declared a habitual offender, any new
-                infractions will be punished more
-                severely.
-              </p>
-              <p>
-                ●
-                Information
-              </p>
-              <p>
-                ●
-                NaN: No entry
-              </p>
+              ● Bankruptcy - a debtor files a bankruptcy petition with the court
+              when they cannot repay their outstanding debts.
             </p>
+            <p>
+              ● Complex - cases that require more intensive judicial management
+              (i.e. many attorneys, many parties, complicated subject matter,
+              many expert witnesses, extensive discovery, parties from many
+              jurisdictions).
+            </p>
+            <p>
+              ● Habitual Offender - a D who has been convicted of multiple
+              offenses may be declared a habitual offender. Once you are
+              declared a habitual offender, any new infractions will be punished
+              more severely.
+            </p>
+            <p>● Information</p>
+            <p>● NaN: No entry</p>
           </td>
-        </table>
-          <div class="panel-heading" style="margin-top:25px">ConcludedBy</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Describes how the case was concluded.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-              String
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                Field takes one of the following values:
-                <p>
-                  <p>
-                    ●
-                    Affidavit For Divorce - file given to court
-                    as part of initial request to dissolve the
-                    marriage. It is an oath by both spouses
-                    that they believe the marriage can’t be
-                    fixed and they agree to call off their
-                    marriage legally. They may also be
-                    required to file a financial affidavit to
-                    assist the court in a division of assets
-                    later.
-                  </p>
-                  <p>
-                    ●
-                    Default Judgment - one party has failed to
-                    perform a court-ordered action and that
-                    failure has impacted the case so
-                    substantially the judge finds in favor of
-                    the other party (ex. When a D fails to go
-                    before the court repeatedly).
-                  </p>
-                  <p>
-                    ●
-                    Deposition - a sworn out of court
-                    testimony conducted by one of the
-                    party’s lawyers. Depositions are
-                    conducted as part of the discovery
-                    process before a trial or settlement.
-                    Witness’s can be subpoenaed to attend a
-                    deposition, but both party’s lawyers are
-                    usually present.
-                  </p>
-                  <p>
-                    ●
-                    Dismissal - termination of the action
-                    without a final judgement. In a civil case,
-                    this is often achieved when the D motions
-                    to dismiss the case
-                    for failure to state a
-                    claim upon which relief may be granted
-                    (no real legal or factual basis for the
-                    claim).
-                  </p>
-                  <p>
-                    ●
-                    Mediation - instead of revolving issues in
-                    a formal court setting with a judge, the
-                    parties
-                    discuss their disputes with the
-                    assistance of a impartial third person(s)
-                    who have been trained to be mediators. A
-                    mediation is often recommended if the
-                    judge believes this might be a better
-                    avenue to figure out the issue at hand or
-                    the parties schedule it during a settlement conference.
-                  </p>
-                  <p>
-                    ●
-                    Nonsuit - judge decides an action is a
-                    nonsuit when a P fails to
-                    provide
-                    sufficient evidence or make an adequate
-                    legal
-                     showing for the judge to rule in the
-                    plaintiff's favor. It is like a dismissal, but a
-                    nonsuit allows the P to correct a flaw in
-                    his or her case and re-file the action
-                    without any penalty.
-                  </p>
-                  <p>
-                    ●
-                    Other
-                  </p>
-                  <p>
-                    ●
-                    Purged After 1 Year - when certain
-                    evidence (police reports, admin records,
-                    traffic records) or an entire charge in a
-                    D’s record is expunged (erased or thrown
-                    out) after 1 year.
-                  </p>
-                  <p>
-                    ●
-                    Purged After 2 Years - when certain
-                    evidence or a charge in a D’s record is
-                    expunged (erased or thrown out) after 2
-                    years.
-                  </p>
-                  <p>
-                    ●
-                    Purged After 3 Years - when certain
-                    evidence or a charge in a D’s record is
-                    expunged (erased or thrown out) after 3
-                    years.
-                  </p>
-                  <p>
-                    ●
-                    Report By Commissioner
-                  </p>
-                  <p>
-                    ●
-                    Resolved - all issues before the court are
-                    resolved and there is no need for further
-                    judicial intervention.
-                  </p>
-                  <p>
-                    ●
-                    Settlement - both parties agree to settle
-                    their issues before a trial in order to avoid
-                    lengthy litigation.
-                  </p>
-                  <p>
-                    ●
-                    Settlement/Nonsuit/Vol. Dismissal - for
-                    some reason, there is no justiciable issue
-                    in front of the court.
-                  </p>
-                  <p>
-                    ●
-                    Transferred - the case is transferred and
-                    moved to another court.
-                  </p>
-                  <p>
-                    ●
-                    Trial - Judge With Witnesses - a so-called
-                    “bench trial” occurs when there is only a
-                    judge and no jury. The ultimate decision
-                    maker is the judge, and he listens to
-                    witnesses to decide if they are credible
-                    and how much to weigh their testimony.
-                    These are much more common in civil
-                    cases.
-                  </p>
-                  <p>
-                    ●
-                    Trial - Jury - a trial with a jury occurs when
-                    it is a jury of the D’s peers who decide the
-                    ultimate outcome. A jury trial is
-                    guaranteed for criminal Ds who are
-                    charged with serious offenses that
-                    subject the D to prison time.
-                  </p>
-                  <p>
-                    ●
-                    Withdrawn Prior To Trial - a party
-                    withdraws their action before trial begins.
-                  </p>
-                  <p>
-                    ●
-                    NaN : No entry.
-                  </p>
-                </p>
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading">DateOrderedToMediation</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Date parties were ordered to mediation.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                Date (YYYY-MM-DD)
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">Defendant1Attorney, Defendant2Attorney, Defendant3Attorney</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Name of defendant attorney(s).
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String.
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                Name of attorney or law firm.
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">Defendant1TradingAs, Defendant2TradingAs, Defendant3TradingAs</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Defendant(s) name of business trading under an
-                assumed name (e.g “doing business as”).
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String.
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                Individual or business name.
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading">Filed</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Date filed.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                Date (YYYY-MM-DD)
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">FilingFeePaid</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Indicates whether or not filing fee was paid.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String / boolean
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                “t”
-                <br>NaN : No entry
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">Type of court filing</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Type of court filing.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                The following is a list of possible values.  Field
-                only takes one value
-                <p>
-                  <p>
-                    ●
-                    (AOE ) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (AOL ) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (CTPT) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (DIST) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (GASC) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (HAB ) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (INTR) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (SERV) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    (
-                    TLAW) Not In Translation Table
-                  </p>
-                  <p>
-                    ●
-                    Accounting - a financial inventory of
-                    assets, debts, income, expenditures, and
-                    other items of a party. These accounting
-                    filings are often used in divorce cases to
-                    determine allocation of marital assets or
-                    estate administration.
-                  </p>
-                  <p>
-                    ●
-                    Adult Protection - usually to protect an
-                    elderly person or an adult with mental
-                    disabilities from abuse from those who
-                    are supposed to be taking care of them.
-                    The court may grant this order and
-                    authorize the provision of adult protective
-                    services on an emergency basis.
-                  </p>
-                  <p>
-                    ●
-                    Aid And Guidance - a party request
-                    assistance from the court in filing a
-                    certain motion?
-                  </p>
-                  <p>
-                    ●
-                    Aid And Guidence
-                  </p>
-                  <p>
-                    ●
-                    Amend Death Certificate - state registrar
-                    can change information of a death
-                    certificate if a surviving family
-                    member/appointed estate manager files
-                    the required affidavits and documents
-                    (ex. Wrong name, military status, date of
-                    death)
-                  </p>
-                  <p>
-                    ●
-                    Annexation - a government/municipality
-                    obtains more territory by annexing
-                    (grabbing) that territory
-                  </p>
-                  <p>
-                    ●
-                    Annulment - when a court declares your
-                    marriage as not legally valid (as if it never
-                    occurred). This is different from a legal
-                    divorce, where the marriage is still seen
-                    as once valid.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Abc Board - one can appeal an
-                    Alcohol Beverage Control Authority
-                    disciplinary action after they are punished
-                    for an ABC
-                    law violation, contested license
-                    application or franchise issue.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Agriculture & Consumer Services
-                    – an appeal permitted by state law that
-                    allows a party to challenge the decision of
-                    a non-judicial entity, like a local
-                    government or administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Board Of Zoning – an appeal
-                    permitted by state law that allows a party
-                    to challenge the decision of a non-judicial
-                    entity, like a local government or
-                    administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Compensation Board– an appeal
-                    permitted by state law that allows a party
-                    to challenge the decision of a non-judicial
-                    entity, like a local government or
-                    administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Employment Commission– an
-                    appeal permitted by state law that allows
-                    a party to challenge the decision of a non-
-                    judicial entity, like a local government or
-                    administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Local Government– an appeal
-                    permitted by state law that allows a party
-                    to challenge the decision of a non-judicial
-                    entity, like a local government or
-                    administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Marine Resources Commission–
-                    an appeal permitted by state law that
-                    allows a party to challenge the decision of
-                    a non-judicial entity, like a local
-                    government or administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appeal - Voter Registration– an appeal
-                    permitted by state law that allows a party
-                    to challenge the decision of a non-judicial
-                    entity, like a local government or
-                    administrative agency.
-                  </p>
-                  <p>
-                    ●
-                    Appointment Of Church Trustee,
-                    Substitute Fiduciaries – a court’s decision
-                    to put someone in charge of the affairs of
-                    a church.
-                  </p>
-                  <p>
-                    ●
-                    Appointment Of Guardian And/Or
-                    Conservator – a court’s decision to put
-                    someone in charge of someone lacking
-                    capacity, like a minor or someone with
-                    mental disabilities.
-                  </p>
-                  <p>
-                    ●
-                    Approval Of Right To Be Eligible To Vote –
-                    A court’s permission to the registrar to
-                    allow a person to vote.
-                  </p>
-                  <p>
-                    ●
-                    Approval Of Transfer Of Structured
-                    Settlement – A court’s permission to sell
-                    rights in a structured payment
-                    settlement. For example, when a plaintiff
-                    is awarded $1,000 a month for a decade,
-                    but the court allows her to sell that for a
-                    lump sum payment.
-                  </p>
-                  <p>
-                    ●
-                    Asbestos Litigation – Litigation related to
-                    personal injury from asbestos.
-                  </p>
-                  <p>
-                    ●
-                    Attachment - court order seizing property.
-                    Can be used as a pre-trial provisional
-                    remedy or to enforce a final judgement.
-                  </p>
-                  <p>
-                    ●
-                    Bill Of Complaint - formal statement of
-                    the facts and a prayer for relief. In
-                    Virginia, the bill of complaint is required
-                    in divorce proceedings/ In the bill of
-                    complaint, a party lays out all of the facts
-                    that the court may consider in the divorce
-                    proceedings, including separation of
-                    assets and support.
-                  </p>
-                  <p>
-                    ●
-                    Bond Appeal From District Court - when a
-                    civil D is given an adverse decision, he
-                    can appeal this decision. However, simply
-                    appealing doesn’t stop a creditor from
-                    trying to come after the D for the
-                    judgement. Therefore, he is required to
-                    rile a “supercedeas” bond with the court
-                    to effectively stay the
-                    execution/collection of the civil
-                    judgement. In other words, he has to pay
-                    to stop creditors from coming after him
-                    during the appeal.
-                  </p>
-                  <p>
-                    ●
-                    Bond Forfeiture - when you post bond and
-                    then you fail to comply with the
-                    conditions of the bond, the court can then
-                    take the money you paid for bond and
-                    keep it.
-                  </p>
-                  <p>
-                    ●
-                    Bond Forfeiture Appeal – when the court
-                    keeps your bond money but you think
-                    they made a mistake or disagree with the
-                    decision.
-                  </p>
-                  <p>
-                    ●
-                    Change Of Sex – a case seeking a court
-                    order legally changing someone’s
-                    male/female designation.
-                  </p>
-                  <p>
-                    ●
-                    Child Abuse & Neglect – a case against a
-                    parent or guardian for abuse or neglect of
-                    a child.
-                  </p>
-                  <p>
-                    ●
-                    Civil Commitment Of A Sexually Violent
-                    Predator – a process putting someone
-                    into non-prison custody secondary to a
-                    criminal case.
-                  </p>
-                  <p>
-                    ●
-                    Civil Contempt – a case punishing
-                    someone for disrespecting a judge or
-                    violating a court order.
-                  </p>
-                  <p>
-                    ●
-                    Claim Impleading Third Party Def. – a
-                    claim forcing someone who is not
-                    currently part of a lawsuit to join because
-                    they are necessary to properly adjudicate
-                    the dispute.
-                  </p>
-                  <p>
-                    ●
-                    Complaint - Catch-All
-                  </p>
-                  <p>
-                    ●
-                    Compromise Settlement (Injury/Wrongful
-                    Death) – an agreement between a
-                    plaintiff and a defendant to settle a
-                    personal injury lawsuit for a certain
-                    amount of money without going to trial.
-                  </p>
-                  <p>
-                    ●
-                    Condemnation – an action by a
-                    government to take private property, or
-                    when a government action has infringed
-                    on someone’s real property (land)
-                    interest.
-                  </p>
-                  <p>
-                    ●
-                    Confessed Judgment – when a party does
-                    not dispute the amount they owe.
-                  </p>
-                  <p>
-                    ●
-                    Conservator Of The Peace – a status
-                    conferred upon private citizens that give
-                    them a right to enforce certain laws.
-                  </p>
-                  <p>
-                    ●
-                    Construe Will – an action asking a court to
-                    interpret the terms of a dead person’s
-                    will.
-                  </p>
-                  <p>
-                    ●
-                    Contract Action – an action claiming a
-                    party to a contract broke that contract.
-                  </p>
-                  <p>
-                    ●
-                    Correct/Erron. State/Local Taxes – an
-                    action asking the court to adjust
-                    someone’s takes because of an alleged
-                    mistake.
-                  </p>
-                  <p>
-                    ●
-                    Counter Claim – a claim by a defendant
-                    against a plaintiff.
-                  </p>
-                  <p>
-                    ●
-                    Cross Claim – a claim between two parties
-                    on one side of an existing case. For
-                    example, when one defendant sues
-                    another defendant.
-                  </p>
-                  <p>
-                    ●
-                    Declaratory Judgment – a decision by a
-                    court that states the rights of the parties
-                    but that does not award damages or
-                    require any action.
-                  </p>
-                  <p>
-                    ●
-                    Declare Death – a request that a court
-                    find that someone is dead.
-                  </p>
-                  <p>
-                    ●
-                    Delinquent Taxes – an action by a
-                    government asking the court to force
-                    someone to pay their taxes.
-                  </p>
-                  <p>
-                    ●
-                    Detinue - allows a plaintiff to seize a
-                    defendant’s assets in case he wins
-                    against him. This prevents the defendant
-                    from hiding assets before judgement. It
-                    requires an ex-parte hearing.
-                  </p>
-                  <p>
-                    ●
-                    Divorce – an action seeking divorce from
-                    a spouse.
-                  </p>
-                  <p>
-                    ●
-                    Divorce Counterclaim Responsive
-                    Pleading
-                  </p>
-                  <p>
-                    ●
-                    Ejectment – an action asking the court to
-                    forcibly remove someone who is
-                    wrongfully in possession of land.
-                  </p>
-                  <p>
-                    ●
-                    Encumber/Sell Real Estate – an action
-                    involving limitations on one’s ability to
-                    sell his land, like a mortgage.
-                  </p>
-                  <p>
-                    ●
-                    Enforce Vendor's Lien – an action by a
-                    seller of goods or services to force a
-                    buyer to pay.
-                  </p>
-                  <p>
-                    ●
-                    Escheat – an action directing assets from
-                    a defendant’s estate to the government.
-                  </p>
-                  <p>
-                    ●
-                    Establish Boundaries – an action asking
-                    the court to determine the legal limits of
-                    someone’s property.
-                  </p>
-                  <p>
-                    ●
-                    Expunge – an action asking the court to
-                    remove a criminal conviction from
-                    someone’s record.
-                  </p>
-                  <p>
-                    ●
-                    Forfeiture Of Property Or Money – an
-                    action taking away money or property
-                    from a defendant by action of law.
-                  </p>
-                  <p>
-                    ●
-                    Freedom Of Information – an action
-                    asking the court to force the disclosure of
-                    public information pursuant to the state’s
-                    freedom of information laws.
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Abstract Of Judgment – appeal from
-                    General District Court case of the listed
-                    type.
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Admin License Suspension - appeal
-                    from General District Court case of the
-                    listed type.
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Attachment- appeal from General
-                    District Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Bond Forfeiture (Show Cause) -
-                    appeal from General District Court case of
-                    the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Counterclaim- appeal from General
-                    District Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Cross-Warrant- appeal from General
-                    District Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Detinue- appeal from General
-                    District Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Detinue Seizure- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Distress Seizure- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Impoundment- appeal from General
-                    District Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Mechanic's Lien- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Motion For Judgment- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Motor Carrier- appeal from General
-                    District Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Other- appeal from General District
-                    Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Overweight Cita- appeal from
-                    General District Court case of the listed
-                    type tion
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Petition To Restore Right To B-
-                    appeal from General District Court case of
-                    the listed type ear Arms- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Restricted License- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Tenant's Assertion- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Third-Party Claim- appeal from
-                    General District Court case of the listed
-                    type
-                    ●
-                    Gapl-Unlawful Detainer- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Warrant In Debt- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Gapl-Zoning Violation- appeal from
-                    General District Court case of the listed
-                    type
-                  </p>
-                  <p>
-                    ●
-                    Garnishment
-                  </p>
-                  <p>
-                    ●
-                    General District Court Appeal
-                  </p>
-                  <p>
-                    ●
-                    General District Court Removal
-                  </p>
-                  <p>
-                    ●
-                    General Tort Liability
-                  </p>
-                  <p>
-                    ●
-                    Grievance Procedures
-                  </p>
-                  <p>
-                    ●
-                    Guardian Appointment
-                  </p>
-                  <p>
-                    ●
-                    Guardian For Minor By Clerk
-                  </p>
-                  <p>
-                    ●
-                    Guardian For Minor By Court
-                  </p>
-                  <p>
-                    ●
-                    Injunction
-                  </p>
-                  <p>
-                    ●
-                    Intentional Tort
-                  </p>
-                  <p>
-                    ●
-                    Interdiction – a process by which a court
-                    determines that an individual is unable to
-                    make decisions for himself.
-                  </p>
-                  <p>
-                    ●
-                    Interpleader
-                  </p>
-                  <p>
-                    ●
-                    Interrogatory Summons
-                  </p>
-                  <p>
-                    ●
-                    Japl-Bond Forfeiture Show Cause- appeal
-                    from Juvenile/Domestic Relations Court
-                    case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Japl-Criminal Support - appeal from
-                    Juvenile/Domestic Relations Court case of
-                    the listed type
-                  </p>
-                  <p>
-                    ●
-                    Japl-Remand Support - appeal from
-                    Juvenile/Domestic Relations Court case of
-                    the listed type
-                  </p>
-                  <p>
-                    ●
-                    Japl-Show Cause - appeal from
-                    Juvenile/Domestic Relations Court case of
-                    the listed type
-                  </p>
-                  <p>
-                    ●
-                    Japl.Civil Support - appeal from
-                    Juvenile/Domestic Relations Court case of
-                    the listed type
-                  </p>
-                  <p>
-                    ●
-                    Japl.Restricted License For Non-Support -
-                    appeal from Juvenile/Domestic Relations
-                    Court case of the listed type
-                  </p>
-                  <p>
-                    ●
-                    Judgment Lien (Bill To Enforce) – the right
-                    of a judgment creditor (someone owed
-                    money) to take possession or title of the
-                    debtor’s (person owing money) property;
-                    or, an action asking the court to transfer
-                    possession of title to satisfy a money
-                    judgment
-                  </p>
-                  <p>
-                    ●
-                    Judicial Review – an action in which the
-                    court reviews the constitutionality/legality
-                    of the action of another branch of
-                    government?
-                  </p>
-                  <p>
-                    ●
-                    Landlord/Tenant
-                  </p>
-                  <p>
-                    ●
-                    Law Enforcement Officer Petition – an
-                    action by a law enforcement officer
-                    asking the court to issue an order. For
-                    example, a police officer asking the court
-                    to issue an emergency custody order for
-                    an individual experiencing a mental
-                    health crisis.
-                  </p>
-                  <p>
-                    ●
-                    License: No such file or directory
-                  </p>
-                  <p>
-                    ●
-                    Mechanic's Lien – the right of a service
-                    provider to keep an item on which he
-                    made valuable improvements or repairs
-                    until he is paid the reasonable value of
-                    his work. For example, a dry cleaner can
-                    keep a dress he cleaned until the
-                    cleaning is paid for.
-                  </p>
-                  <p>
-                    ●
-                    Medical Malpractice
-                  </p>
-                  <p>
-                    ●
-                    Motion For Judgment
-                  </p>
-                  <p>
-                    ●
-                    Motion For Judgment - Asbestos Litigation
-                  </p>
-                  <p>
-                    ●
-                    Motor Vehicle
-                  </p>
-                  <p>
-                    ●
-                    Name Change
-                  </p>
-                  <p>
-                    ●
-                    nan
-                  </p>
-                  <p>
-                    ●
-                    Order To Sever – a court order that
-                    divides up a single case with multiple
-                    claims or parties into separate cases.
-                  </p>
-                  <p>
-                    ●
-                    Partition – an action asking the court to
-                    divide real property (land) that is owned
-                    by multiple people. For example, when
-                    spouses get divorced and the land needs
-                    to be split up in order to be sold.
-                  </p>
-                  <p>
-                    ●
-                    Pawnbroker License Application
-                  </p>
-                  <p>
-                    ●
-                    Petition
-                  </p>
-                  <p>
-                    ●
-                    Petition-Administrative Appeal(Includes
-                    Appeals From Local Govt's, Boards,
-                    Agencies & Commissions
-                  </p>
-                  <p>
-                    ●
-                    Product Liability – an action seeking
-                    money damages from the manufacturer
-                    or vendor of a product that caused injury
-                    or death.
-                  </p>
-                  <p>
-                    ●
-                    Quiet Title – an action by which the court
-                    decides who has superior rights (who is
-                    the rightful owner) in property. For
-                    example, when two people claim to own
-                    the same piece of land, and the court
-                    decides who is right.
-                  </p>
-                  <p>
-                    ●
-                    Recognize Foreign Country Judgment – an
-                    action in which a debt owed in a foreign
-                    country is “domesticated”, or made valid
-                    within Virginia, so that a debtor’s assets
-                    in Virginia can be seized by the creditor.
-                  </p>
-                  <p>
-                    ●
-                    Referendum Elections
-                  </p>
-                  <p>
-                    ●
-                    Reformation Of Trust – an action asking
-                    the court to review and modify the terms
-                    of a trust (money or property that is given
-                    for a specific purpose)
-                  </p>
-                  <p>
-                    ●
-                    Reinstatement (General) – a court action
-                    that restores certain rights or privileges
-                    to an individual after they were taken
-                    away.
-                  </p>
-                  <p>
-                    ●
-                    Reinstatement Of Driving Privileges
-                  </p>
-                  <p>
-                    ●
-                    Removal
-                  </p>
-                  <p>
-                    ●
-                    Restore Driving Privilege
-                  </p>
-                  <p>
-                    ●
-                    Restore Firearms Rights Felony
-                  </p>
-                  <p>
-                    ●
-                    Restore Firearms Rights Review
-                  </p>
-                  <p>
-                    ●
-                    Rites Of Marriage Celebrant – an action in
-                    which the court grants permission to an
-                    individual to officiate a wedding within
-                    Virginia.
-                  </p>
-                  <p>
-                    ●
-                    Separate Maintenance
-                  </p>
-                  <p>
-                    ●
-                    Separate Maintenance Counterclaim
-                    Responsive Pleading
-                  </p>
-                  <p>
-                    ●
-                    Specific Performance – an action in which
-                    the court forces a party to comply with
-                    the terms of a contract. For example,
-                    when the court forces a property owner to
-                    transfer title to a buyer where there was
-                    a valid contract to sell the land.
-                  </p>
-                  <p>
-                    ●
-                    Standby Guardian/Conservator
-                  </p>
-                  <p>
-                    ●
-                    Termination Of Mineral Rights
-                  </p>
-                  <p>
-                    ●
-                    Transfer
-                  </p>
-                  <p>
-                    ●
-                    Transfer From Chancery –
-                  </p>
-                  <p>
-                    ●
-                    Trust - Impress/Declare/Create
-                  </p>
-                  <p>
-                    ●
-                    Uniform Transfers To Minors Act
-                  </p>
-                  <p>
-                    ●
-                    Unlawful Detainer – an action by a
-                    landlord to evict a tenant who has
-                    breached or overstayed his lease.
-                  </p>
-                  <p>
-                    ●
-                    Vehicle Confiscation
-                  </p>
-                  <p>
-                    ●
-                    Will Construction – a process by which the
-                    court determines the validity and
-                    contents of a will.
-                  </p>
-                  <p>
-                    ●
-                    Writ Of Certiorari – an order by an
-                    appellate court granting a party’s request
-                    for appellate review.
-                  </p>
-                  <p>
-                    ●
-                    Writ Of Habeas Corpus – a court order
-                    requiring a government official – typically
-                    a jailer or sheriff – to bring a prisoner
-                    before the court so that the court can
-                    determine if they are being held legally.
-                  </p>
-                  <p>
-                    ●
-                    Writ Of Mandamus – an order by a court
-                    forcing an individual – typically a
-                    government official – to execute a legal
-                    duty they are required to complete, or to
-                    refrain from doing something they cannot
-                    do.
-                  </p>
-                  <p>
-                    ●
-                    Writ Of Prohibition – an order by a court
-                    ordering an inferior court to stop hearing
-                    a case because it lacks jurisdiction to do
-                    so.
-                  </p>
-                  <p>
-                    ●
-                    Writ Of Quo Warranto – an order by a
-                    court compelling someone to stop acting
-                    without authority or permission.
-                  </p>
-                  <p>
-                    ●
-                    Wrongful Death – a civil action by a
-                    decedent’s estate seeking money for an
-                    unnatural death. For example, when a
-                    parent sues a driver who killed their son
-                    in an accident.
-                  </p>
-                </p>
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading">FinalOrderDate</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Date of final order.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                Date (YYYY-MM-DD)
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">fips</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Three digit code uniquely identifying a Virginia
-                county or city.  “FIPS” is short for “Federal
-                Information Processing Standard” and a list of
-                FIPS codes for Virginia cities and counties can be
-                found here:
-                https://en.wikipedia.org/wiki/List_of_cities_and_co
-                unties_in_Virginia
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                See reference in description above.
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">Judgment</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                “Winning” party for a case.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                “Defendant”<br>
-                “Other”<br>
-                “Plaintiff”<br>
-                NaN : No entry.
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">NumberofDefendants</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Number of defendants.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                Integer
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                1 - 1257
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">NumberofPlaintiffs</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Number of plaintiffs.
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                Integer
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                0 - 465
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">Plaintiff1Attorney, Plaintiff2Attorney, Plaintiff3Attorney</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Name of Plaintiff attorney(s).
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String.
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                Name of attorney or law firm.
-              </td>
-            </tr>
-          </table>
-          <div class="panel-heading" style="margin-top:25px">Plaintiff1TradingAs, Plaintiff2TradingAs, Plaintiff3TradingAs</div>
-          <table class="table">
-            <tr>
-              <th style="width:120px;">Description:</th>
-              <td style="width:680px;">
-                Defendant(s) name of business trading under an
-                assumed name (e.g “doing business as”).
-              </td>
-            </tr>
-            <tr>
-              <th>Variable Type:</th>
-              <td>
-                String.
-              </td>
-            </tr>
-            <tr>
-              <th>Values:</th>
-              <td>
-                Individual or business name.
-              </td>
-            </tr>
-          </table>
         </tr>
       </table>
 
+      <div class="panel-heading" style="margin-top: 25px">ConcludedBy</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Describes how the case was concluded.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Field takes one of the following values:
+            <p></p>
+            <p>
+              ● Affidavit For Divorce - file given to court as part of initial
+              request to dissolve the marriage. It is an oath by both spouses
+              that they believe the marriage can’t be fixed and they agree to
+              call off their marriage legally. They may also be required to file
+              a financial affidavit to assist the court in a division of assets
+              later.
+            </p>
+            <p>
+              ● Default Judgment - one party has failed to perform a
+              court-ordered action and that failure has impacted the case so
+              substantially the judge finds in favor of the other party (ex.
+              When a D fails to go before the court repeatedly).
+            </p>
+            <p>
+              ● Deposition - a sworn out of court testimony conducted by one of
+              the party’s lawyers. Depositions are conducted as part of the
+              discovery process before a trial or settlement. Witness’s can be
+              subpoenaed to attend a deposition, but both party’s lawyers are
+              usually present.
+            </p>
+            <p>
+              ● Dismissal - termination of the action without a final judgement.
+              In a civil case, this is often achieved when the D motions to
+              dismiss the case for failure to state a claim upon which relief
+              may be granted (no real legal or factual basis for the claim).
+            </p>
+            <p>
+              ● Mediation - instead of revolving issues in a formal court
+              setting with a judge, the parties discuss their disputes with the
+              assistance of a impartial third person(s) who have been trained to
+              be mediators. A mediation is often recommended if the judge
+              believes this might be a better avenue to figure out the issue at
+              hand or the parties schedule it during a settlement conference.
+            </p>
+            <p>
+              ● Nonsuit - judge decides an action is a nonsuit when a P fails to
+              provide sufficient evidence or make an adequate legal showing for
+              the judge to rule in the plaintiff's favor. It is like a
+              dismissal, but a nonsuit allows the P to correct a flaw in his or
+              her case and re-file the action without any penalty.
+            </p>
+            <p>● Other</p>
+            <p>
+              ● Purged After 1 Year - when certain evidence (police reports,
+              admin records, traffic records) or an entire charge in a D’s
+              record is expunged (erased or thrown out) after 1 year.
+            </p>
+            <p>
+              ● Purged After 2 Years - when certain evidence or a charge in a
+              D’s record is expunged (erased or thrown out) after 2 years.
+            </p>
+            <p>
+              ● Purged After 3 Years - when certain evidence or a charge in a
+              D’s record is expunged (erased or thrown out) after 3 years.
+            </p>
+            <p>● Report By Commissioner</p>
+            <p>
+              ● Resolved - all issues before the court are resolved and there is
+              no need for further judicial intervention.
+            </p>
+            <p>
+              ● Settlement - both parties agree to settle their issues before a
+              trial in order to avoid lengthy litigation.
+            </p>
+            <p>
+              ● Settlement/Nonsuit/Vol. Dismissal - for some reason, there is no
+              justiciable issue in front of the court.
+            </p>
+            <p>
+              ● Transferred - the case is transferred and moved to another
+              court.
+            </p>
+            <p>
+              ● Trial - Judge With Witnesses - a so-called “bench trial” occurs
+              when there is only a judge and no jury. The ultimate decision
+              maker is the judge, and he listens to witnesses to decide if they
+              are credible and how much to weigh their testimony. These are much
+              more common in civil cases.
+            </p>
+            <p>
+              ● Trial - Jury - a trial with a jury occurs when it is a jury of
+              the D’s peers who decide the ultimate outcome. A jury trial is
+              guaranteed for criminal Ds who are charged with serious offenses
+              that subject the D to prison time.
+            </p>
+            <p>
+              ● Withdrawn Prior To Trial - a party withdraws their action before
+              trial begins.
+            </p>
+            <p>● NaN : No entry.</p>
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading">DateOrderedToMediation</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date parties were ordered to mediation.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        Defendant1Attorney, Defendant2Attorney, Defendant3Attorney
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Name of defendant attorney(s).</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>Name of attorney or law firm.</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        Defendant1TradingAs, Defendant2TradingAs, Defendant3TradingAs
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Defendant(s) name of business trading under an assumed name (e.g
+            “doing business as”).
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>Individual or business name.</td>
+        </tr>
+      </table>
+      <div class="panel-heading">Filed</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date filed.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">FilingFeePaid</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Indicates whether or not filing fee was paid.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String / boolean</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            “t”
+            <br />NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        Type of court filing
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Type of court filing.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            The following is a list of possible values. Field only takes one
+            value
+            <p></p>
+            <p>● (AOE ) Not In Translation Table</p>
+            <p>● (AOL ) Not In Translation Table</p>
+            <p>● (CTPT) Not In Translation Table</p>
+            <p>● (DIST) Not In Translation Table</p>
+            <p>● (GASC) Not In Translation Table</p>
+            <p>● (HAB ) Not In Translation Table</p>
+            <p>● (INTR) Not In Translation Table</p>
+            <p>● (SERV) Not In Translation Table</p>
+            <p>● ( TLAW) Not In Translation Table</p>
+            <p>
+              ● Accounting - a financial inventory of assets, debts, income,
+              expenditures, and other items of a party. These accounting filings
+              are often used in divorce cases to determine allocation of marital
+              assets or estate administration.
+            </p>
+            <p>
+              ● Adult Protection - usually to protect an elderly person or an
+              adult with mental disabilities from abuse from those who are
+              supposed to be taking care of them. The court may grant this order
+              and authorize the provision of adult protective services on an
+              emergency basis.
+            </p>
+            <p>
+              ● Aid And Guidance - a party request assistance from the court in
+              filing a certain motion?
+            </p>
+            <p>● Aid And Guidence</p>
+            <p>
+              ● Amend Death Certificate - state registrar can change information
+              of a death certificate if a surviving family member/appointed
+              estate manager files the required affidavits and documents (ex.
+              Wrong name, military status, date of death)
+            </p>
+            <p>
+              ● Annexation - a government/municipality obtains more territory by
+              annexing (grabbing) that territory
+            </p>
+            <p>
+              ● Annulment - when a court declares your marriage as not legally
+              valid (as if it never occurred). This is different from a legal
+              divorce, where the marriage is still seen as once valid.
+            </p>
+            <p>
+              ● Appeal - Abc Board - one can appeal an Alcohol Beverage Control
+              Authority disciplinary action after they are punished for an ABC
+              law violation, contested license application or franchise issue.
+            </p>
+            <p>
+              ● Appeal - Agriculture & Consumer Services – an appeal permitted
+              by state law that allows a party to challenge the decision of a
+              non-judicial entity, like a local government or administrative
+              agency.
+            </p>
+            <p>
+              ● Appeal - Board Of Zoning – an appeal permitted by state law that
+              allows a party to challenge the decision of a non-judicial entity,
+              like a local government or administrative agency.
+            </p>
+            <p>
+              ● Appeal - Compensation Board– an appeal permitted by state law
+              that allows a party to challenge the decision of a non-judicial
+              entity, like a local government or administrative agency.
+            </p>
+            <p>
+              ● Appeal - Employment Commission– an appeal permitted by state law
+              that allows a party to challenge the decision of a non- judicial
+              entity, like a local government or administrative agency.
+            </p>
+            <p>
+              ● Appeal - Local Government– an appeal permitted by state law that
+              allows a party to challenge the decision of a non-judicial entity,
+              like a local government or administrative agency.
+            </p>
+            <p>
+              ● Appeal - Marine Resources Commission– an appeal permitted by
+              state law that allows a party to challenge the decision of a
+              non-judicial entity, like a local government or administrative
+              agency.
+            </p>
+            <p>
+              ● Appeal - Voter Registration– an appeal permitted by state law
+              that allows a party to challenge the decision of a non-judicial
+              entity, like a local government or administrative agency.
+            </p>
+            <p>
+              ● Appointment Of Church Trustee, Substitute Fiduciaries – a
+              court’s decision to put someone in charge of the affairs of a
+              church.
+            </p>
+            <p>
+              ● Appointment Of Guardian And/Or Conservator – a court’s decision
+              to put someone in charge of someone lacking capacity, like a minor
+              or someone with mental disabilities.
+            </p>
+            <p>
+              ● Approval Of Right To Be Eligible To Vote – A court’s permission
+              to the registrar to allow a person to vote.
+            </p>
+            <p>
+              ● Approval Of Transfer Of Structured Settlement – A court’s
+              permission to sell rights in a structured payment settlement. For
+              example, when a plaintiff is awarded $1,000 a month for a decade,
+              but the court allows her to sell that for a lump sum payment.
+            </p>
+            <p>
+              ● Asbestos Litigation – Litigation related to personal injury from
+              asbestos.
+            </p>
+            <p>
+              ● Attachment - court order seizing property. Can be used as a
+              pre-trial provisional remedy or to enforce a final judgement.
+            </p>
+            <p>
+              ● Bill Of Complaint - formal statement of the facts and a prayer
+              for relief. In Virginia, the bill of complaint is required in
+              divorce proceedings/ In the bill of complaint, a party lays out
+              all of the facts that the court may consider in the divorce
+              proceedings, including separation of assets and support.
+            </p>
+            <p>
+              ● Bond Appeal From District Court - when a civil D is given an
+              adverse decision, he can appeal this decision. However, simply
+              appealing doesn’t stop a creditor from trying to come after the D
+              for the judgement. Therefore, he is required to rile a
+              “supercedeas” bond with the court to effectively stay the
+              execution/collection of the civil judgement. In other words, he
+              has to pay to stop creditors from coming after him during the
+              appeal.
+            </p>
+            <p>
+              ● Bond Forfeiture - when you post bond and then you fail to comply
+              with the conditions of the bond, the court can then take the money
+              you paid for bond and keep it.
+            </p>
+            <p>
+              ● Bond Forfeiture Appeal – when the court keeps your bond money
+              but you think they made a mistake or disagree with the decision.
+            </p>
+            <p>
+              ● Change Of Sex – a case seeking a court order legally changing
+              someone’s male/female designation.
+            </p>
+            <p>
+              ● Child Abuse & Neglect – a case against a parent or guardian for
+              abuse or neglect of a child.
+            </p>
+            <p>
+              ● Civil Commitment Of A Sexually Violent Predator – a process
+              putting someone into non-prison custody secondary to a criminal
+              case.
+            </p>
+            <p>
+              ● Civil Contempt – a case punishing someone for disrespecting a
+              judge or violating a court order.
+            </p>
+            <p>
+              ● Claim Impleading Third Party Def. – a claim forcing someone who
+              is not currently part of a lawsuit to join because they are
+              necessary to properly adjudicate the dispute.
+            </p>
+            <p>● Complaint - Catch-All</p>
+            <p>
+              ● Compromise Settlement (Injury/Wrongful Death) – an agreement
+              between a plaintiff and a defendant to settle a personal injury
+              lawsuit for a certain amount of money without going to trial.
+            </p>
+            <p>
+              ● Condemnation – an action by a government to take private
+              property, or when a government action has infringed on someone’s
+              real property (land) interest.
+            </p>
+            <p>
+              ● Confessed Judgment – when a party does not dispute the amount
+              they owe.
+            </p>
+            <p>
+              ● Conservator Of The Peace – a status conferred upon private
+              citizens that give them a right to enforce certain laws.
+            </p>
+            <p>
+              ● Construe Will – an action asking a court to interpret the terms
+              of a dead person’s will.
+            </p>
+            <p>
+              ● Contract Action – an action claiming a party to a contract broke
+              that contract.
+            </p>
+            <p>
+              ● Correct/Erron. State/Local Taxes – an action asking the court to
+              adjust someone’s takes because of an alleged mistake.
+            </p>
+            <p>● Counter Claim – a claim by a defendant against a plaintiff.</p>
+            <p>
+              ● Cross Claim – a claim between two parties on one side of an
+              existing case. For example, when one defendant sues another
+              defendant.
+            </p>
+            <p>
+              ● Declaratory Judgment – a decision by a court that states the
+              rights of the parties but that does not award damages or require
+              any action.
+            </p>
+            <p>
+              ● Declare Death – a request that a court find that someone is
+              dead.
+            </p>
+            <p>
+              ● Delinquent Taxes – an action by a government asking the court to
+              force someone to pay their taxes.
+            </p>
+            <p>
+              ● Detinue - allows a plaintiff to seize a defendant’s assets in
+              case he wins against him. This prevents the defendant from hiding
+              assets before judgement. It requires an ex-parte hearing.
+            </p>
+            <p>● Divorce – an action seeking divorce from a spouse.</p>
+            <p>● Divorce Counterclaim Responsive Pleading</p>
+            <p>
+              ● Ejectment – an action asking the court to forcibly remove
+              someone who is wrongfully in possession of land.
+            </p>
+            <p>
+              ● Encumber/Sell Real Estate – an action involving limitations on
+              one’s ability to sell his land, like a mortgage.
+            </p>
+            <p>
+              ● Enforce Vendor's Lien – an action by a seller of goods or
+              services to force a buyer to pay.
+            </p>
+            <p>
+              ● Escheat – an action directing assets from a defendant’s estate
+              to the government.
+            </p>
+            <p>
+              ● Establish Boundaries – an action asking the court to determine
+              the legal limits of someone’s property.
+            </p>
+            <p>
+              ● Expunge – an action asking the court to remove a criminal
+              conviction from someone’s record.
+            </p>
+            <p>
+              ● Forfeiture Of Property Or Money – an action taking away money or
+              property from a defendant by action of law.
+            </p>
+            <p>
+              ● Freedom Of Information – an action asking the court to force the
+              disclosure of public information pursuant to the state’s freedom
+              of information laws.
+            </p>
+            <p>
+              ● Gapl-Abstract Of Judgment – appeal from General District Court
+              case of the listed type.
+            </p>
+            <p>
+              ● Gapl-Admin License Suspension - appeal from General District
+              Court case of the listed type.
+            </p>
+            <p>
+              ● Gapl-Attachment- appeal from General District Court case of the
+              listed type
+            </p>
+            <p>
+              ● Gapl-Bond Forfeiture (Show Cause) - appeal from General District
+              Court case of the listed type
+            </p>
+            <p>
+              ● Gapl-Counterclaim- appeal from General District Court case of
+              the listed type
+            </p>
+            <p>
+              ● Gapl-Cross-Warrant- appeal from General District Court case of
+              the listed type
+            </p>
+            <p>
+              ● Gapl-Detinue- appeal from General District Court case of the
+              listed type
+            </p>
+            <p>
+              ● Gapl-Detinue Seizure- appeal from General District Court case of
+              the listed type
+            </p>
+            <p>
+              ● Gapl-Distress Seizure- appeal from General District Court case
+              of the listed type
+            </p>
+            <p>
+              ● Gapl-Impoundment- appeal from General District Court case of the
+              listed type
+            </p>
+            <p>
+              ● Gapl-Mechanic's Lien- appeal from General District Court case of
+              the listed type
+            </p>
+            <p>
+              ● Gapl-Motion For Judgment- appeal from General District Court
+              case of the listed type
+            </p>
+            <p>
+              ● Gapl-Motor Carrier- appeal from General District Court case of
+              the listed type
+            </p>
+            <p>
+              ● Gapl-Other- appeal from General District Court case of the
+              listed type
+            </p>
+            <p>
+              ● Gapl-Overweight Cita- appeal from General District Court case of
+              the listed type tion
+            </p>
+            <p>
+              ● Gapl-Petition To Restore Right To B- appeal from General
+              District Court case of the listed type ear Arms- appeal from
+              General District Court case of the listed type
+            </p>
+            <p>
+              ● Gapl-Restricted License- appeal from General District Court case
+              of the listed type
+            </p>
+            <p>
+              ● Gapl-Tenant's Assertion- appeal from General District Court case
+              of the listed type
+            </p>
+            <p>
+              ● Gapl-Third-Party Claim- appeal from General District Court case
+              of the listed type ● Gapl-Unlawful Detainer- appeal from General
+              District Court case of the listed type
+            </p>
+            <p>
+              ● Gapl-Warrant In Debt- appeal from General District Court case of
+              the listed type
+            </p>
+            <p>
+              ● Gapl-Zoning Violation- appeal from General District Court case
+              of the listed type
+            </p>
+            <p>● Garnishment</p>
+            <p>● General District Court Appeal</p>
+            <p>● General District Court Removal</p>
+            <p>● General Tort Liability</p>
+            <p>● Grievance Procedures</p>
+            <p>● Guardian Appointment</p>
+            <p>● Guardian For Minor By Clerk</p>
+            <p>● Guardian For Minor By Court</p>
+            <p>● Injunction</p>
+            <p>● Intentional Tort</p>
+            <p>
+              ● Interdiction – a process by which a court determines that an
+              individual is unable to make decisions for himself.
+            </p>
+            <p>● Interpleader</p>
+            <p>● Interrogatory Summons</p>
+            <p>
+              ● Japl-Bond Forfeiture Show Cause- appeal from Juvenile/Domestic
+              Relations Court case of the listed type
+            </p>
+            <p>
+              ● Japl-Criminal Support - appeal from Juvenile/Domestic Relations
+              Court case of the listed type
+            </p>
+            <p>
+              ● Japl-Remand Support - appeal from Juvenile/Domestic Relations
+              Court case of the listed type
+            </p>
+            <p>
+              ● Japl-Show Cause - appeal from Juvenile/Domestic Relations Court
+              case of the listed type
+            </p>
+            <p>
+              ● Japl.Civil Support - appeal from Juvenile/Domestic Relations
+              Court case of the listed type
+            </p>
+            <p>
+              ● Japl.Restricted License For Non-Support - appeal from
+              Juvenile/Domestic Relations Court case of the listed type
+            </p>
+            <p>
+              ● Judgment Lien (Bill To Enforce) – the right of a judgment
+              creditor (someone owed money) to take possession or title of the
+              debtor’s (person owing money) property; or, an action asking the
+              court to transfer possession of title to satisfy a money judgment
+            </p>
+            <p>
+              ● Judicial Review – an action in which the court reviews the
+              constitutionality/legality of the action of another branch of
+              government?
+            </p>
+            <p>● Landlord/Tenant</p>
+            <p>
+              ● Law Enforcement Officer Petition – an action by a law
+              enforcement officer asking the court to issue an order. For
+              example, a police officer asking the court to issue an emergency
+              custody order for an individual experiencing a mental health
+              crisis.
+            </p>
+            <p>● License: No such file or directory</p>
+            <p>
+              ● Mechanic's Lien – the right of a service provider to keep an
+              item on which he made valuable improvements or repairs until he is
+              paid the reasonable value of his work. For example, a dry cleaner
+              can keep a dress he cleaned until the cleaning is paid for.
+            </p>
+            <p>● Medical Malpractice</p>
+            <p>● Motion For Judgment</p>
+            <p>● Motion For Judgment - Asbestos Litigation</p>
+            <p>● Motor Vehicle</p>
+            <p>● Name Change</p>
+            <p>● nan</p>
+            <p>
+              ● Order To Sever – a court order that divides up a single case
+              with multiple claims or parties into separate cases.
+            </p>
+            <p>
+              ● Partition – an action asking the court to divide real property
+              (land) that is owned by multiple people. For example, when spouses
+              get divorced and the land needs to be split up in order to be
+              sold.
+            </p>
+            <p>● Pawnbroker License Application</p>
+            <p>● Petition</p>
+            <p>
+              ● Petition-Administrative Appeal(Includes Appeals From Local
+              Govt's, Boards, Agencies & Commissions
+            </p>
+            <p>
+              ● Product Liability – an action seeking money damages from the
+              manufacturer or vendor of a product that caused injury or death.
+            </p>
+            <p>
+              ● Quiet Title – an action by which the court decides who has
+              superior rights (who is the rightful owner) in property. For
+              example, when two people claim to own the same piece of land, and
+              the court decides who is right.
+            </p>
+            <p>
+              ● Recognize Foreign Country Judgment – an action in which a debt
+              owed in a foreign country is “domesticated”, or made valid within
+              Virginia, so that a debtor’s assets in Virginia can be seized by
+              the creditor.
+            </p>
+            <p>● Referendum Elections</p>
+            <p>
+              ● Reformation Of Trust – an action asking the court to review and
+              modify the terms of a trust (money or property that is given for a
+              specific purpose)
+            </p>
+            <p>
+              ● Reinstatement (General) – a court action that restores certain
+              rights or privileges to an individual after they were taken away.
+            </p>
+            <p>● Reinstatement Of Driving Privileges</p>
+            <p>● Removal</p>
+            <p>● Restore Driving Privilege</p>
+            <p>● Restore Firearms Rights Felony</p>
+            <p>● Restore Firearms Rights Review</p>
+            <p>
+              ● Rites Of Marriage Celebrant – an action in which the court
+              grants permission to an individual to officiate a wedding within
+              Virginia.
+            </p>
+            <p>● Separate Maintenance</p>
+            <p>● Separate Maintenance Counterclaim Responsive Pleading</p>
+            <p>
+              ● Specific Performance – an action in which the court forces a
+              party to comply with the terms of a contract. For example, when
+              the court forces a property owner to transfer title to a buyer
+              where there was a valid contract to sell the land.
+            </p>
+            <p>● Standby Guardian/Conservator</p>
+            <p>● Termination Of Mineral Rights</p>
+            <p>● Transfer</p>
+            <p>● Transfer From Chancery –</p>
+            <p>● Trust - Impress/Declare/Create</p>
+            <p>● Uniform Transfers To Minors Act</p>
+            <p>
+              ● Unlawful Detainer – an action by a landlord to evict a tenant
+              who has breached or overstayed his lease.
+            </p>
+            <p>● Vehicle Confiscation</p>
+            <p>
+              ● Will Construction – a process by which the court determines the
+              validity and contents of a will.
+            </p>
+            <p>
+              ● Writ Of Certiorari – an order by an appellate court granting a
+              party’s request for appellate review.
+            </p>
+            <p>
+              ● Writ Of Habeas Corpus – a court order requiring a government
+              official – typically a jailer or sheriff – to bring a prisoner
+              before the court so that the court can determine if they are being
+              held legally.
+            </p>
+            <p>
+              ● Writ Of Mandamus – an order by a court forcing an individual –
+              typically a government official – to execute a legal duty they are
+              required to complete, or to refrain from doing something they
+              cannot do.
+            </p>
+            <p>
+              ● Writ Of Prohibition – an order by a court ordering an inferior
+              court to stop hearing a case because it lacks jurisdiction to do
+              so.
+            </p>
+            <p>
+              ● Writ Of Quo Warranto – an order by a court compelling someone to
+              stop acting without authority or permission.
+            </p>
+            <p>
+              ● Wrongful Death – a civil action by a decedent’s estate seeking
+              money for an unnatural death. For example, when a parent sues a
+              driver who killed their son in an accident.
+            </p>
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading">FinalOrderDate</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date of final order.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">fips</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Three digit code uniquely identifying a Virginia county or city.
+            “FIPS” is short for “Federal Information Processing Standard” and a
+            list of FIPS codes for Virginia cities and counties can be found
+            here: https://en.wikipedia.org/wiki/List_of_cities_and_co
+            unties_in_Virginia
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>See reference in description above.</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Judgment</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">“Winning” party for a case.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            “Defendant”<br />
+            “Other”<br />
+            “Plaintiff”<br />
+            NaN : No entry.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        NumberofDefendants
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Number of defendants.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>1 - 1257</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        NumberofPlaintiffs
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Number of plaintiffs.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0 - 465</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        Plaintiff1Attorney, Plaintiff2Attorney, Plaintiff3Attorney
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Name of Plaintiff attorney(s).</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>Name of attorney or law firm.</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        Plaintiff1TradingAs, Plaintiff2TradingAs, Plaintiff3TradingAs
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Defendant(s) name of business trading under an assumed name (e.g
+            “doing business as”).
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>Individual or business name.</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

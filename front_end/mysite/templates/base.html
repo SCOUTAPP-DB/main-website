@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Courts Data Project</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -20,105 +22,192 @@
           <li><a href="#">How to contribute to the project</a></li>
           <li><a href="#">Data Access Request</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Data Dictionaries<span class="caret"></span></a>
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Data Dictionaries<span class="caret"></span
+            ></a>
             <ul class="dropdown-menu">
               <li><a href="{% url 'circuit_civil' %}">Circuit Civil</a></li>
-              <li><a href="{% url 'circuit_criminal' %}">Circuit Criminal</a></li>
+              <li>
+                <a href="{% url 'circuit_criminal' %}">Circuit Criminal</a>
+              </li>
               <li><a href="{% url 'district_civil' %}">District Civil</a></li>
-              <li><a href="{% url 'district_criminal' %}">District Criminal</a></li>
+              <li>
+                <a href="{% url 'district_criminal' %}">District Criminal</a>
+              </li>
             </ul>
           </li>
         </ul>
       </div>
     </nav>
     <form action="/data_req/" method="get">
-    <div style='margin-left: 20px; WIDTH:100%'>
-      <h3>Select Court(s)</h3>
-      <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-dark btn-med" data-toggle="modal" data-target="#districtcourtsModal">District Courts</button>
+      <div style="margin-left: 20px; width: 100%">
+        <h3>Select Court(s)</h3>
+        <!-- Trigger the modal with a button -->
+        <button
+          type="button"
+          class="btn btn-dark btn-med"
+          data-toggle="modal"
+          data-target="#districtcourtsModal"
+        >
+          District Courts
+        </button>
 
-      <!-- Modal -->
-      <div id="districtcourtsModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Select which district courts you want data on</h4>
+        <!-- Modal -->
+        <div id="districtcourtsModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  Select which district courts you want data on
+                </h4>
+              </div>
+              <div
+                class="form-group"
+                style="margin-left: 20px; margin-top: 20px"
+              >
+                {% for court in district_courts %}
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="district_court: {{court}}"
+                    name="district_court: {{court}}"
+                    value="{{court}}"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="district_court: {{court}}"
+                  >
+                    {{court}}
+                  </label>
+                </div>
+                {% endfor %}
+              </div>
             </div>
-                  <div class="form-group" style="margin-left:20px; margin-top:20px">
-                    {% for court in district_courts %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="district_court: {{court}}" name="district_court: {{court}}" value="{{court}}">
-                        <label class="form-check-label" for="district_court: {{court}}"> {{court}} </label>
-                      </div>
-                    {% endfor %}
-                    </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-dark btn-med"
+          data-toggle="modal"
+          data-target="#circuitcourtsModal"
+        >
+          Circuit Courts
+        </button>
+
+        <!-- Modal -->
+        <div id="circuitcourtsModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h4 class="modal-title">
+                  Select which circuit courts you want data on
+                </h4>
+              </div>
+
+              <div
+                class="form-group"
+                style="margin-left: 20px; margin-top: 20px"
+              >
+                {% for court in circuit_courts %}
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="circuit_court: {{court}}"
+                    name="circuit_court: {{court}}"
+                    value="{{court}}"
+                  />
+                  <label
+                    class="form-check-label"
+                    for="circuit_court: {{court}}"
+                  >
+                    {{court}}
+                  </label>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <button type="button" class="btn btn-dark btn-med" data-toggle="modal" data-target="#circuitcourtsModal">Circuit Courts</button>
 
-      <!-- Modal -->
-      <div id="circuitcourtsModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Select which circuit courts you want data on</h4>
+      <hr />
+
+      <div style="margin-left: 20px">
+        <h3>Select Type(s) of Cases</h3>
+        <div>
+          <div class="form-group">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="civil"
+                name="civil"
+                placeholder="off"
+              />
+              <label class="form-check-label" for="civil"> Civil </label>
             </div>
-
-                  <div class="form-group" style="margin-left:20px; margin-top:20px">
-                    {% for court in circuit_courts %}
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="circuit_court: {{court}}" name="circuit_court: {{court}}" value="{{court}}">
-                        <label class="form-check-label" for="circuit_court: {{court}}"> {{court}} </label>
-                      </div>
-                    {% endfor %}
-                  </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="criminal"
+                name="criminal"
+                placeholder="off"
+              />
+              <label class="form-check-label" for="criminal"> Criminal </label>
+            </div>
           </div>
         </div>
       </div>
 
-    </div>
+      <hr />
 
-      <hr>
-
-    <div style='margin-left: 20px;'>
-      <h3>Select Type(s) of Cases</h3>
-      <div>
+      <div style="margin-left: 20px">
+        <h3>Select Date Range</h3>
         <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="civil" name="civil" placeholder="off">
-            <label class="form-check-label" for="civil"> Civil </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="criminal" name="criminal" placeholder="off">
-            <label class="form-check-label" for="criminal"> Criminal </label>
-          </div>
+          <!-- Date input -->
+          <label class="control-label" for="start_date">Start Date</label>
+          <input
+            class="form-control"
+            id="start_date"
+            name="start_date"
+            placeholder="MM/DD/YYY"
+            type="date"
+            style="width: 500px"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <!-- Date input -->
+          <label class="control-label" for="end_date">End Date</label>
+          <input
+            class="form-control"
+            id="end_date"
+            name="end_date"
+            placeholder="MM/DD/YYY"
+            type="date"
+            style="width: 500px"
+            required
+          />
         </div>
       </div>
-    </div>
 
-      <hr>
-
-    <div style='margin-left: 20px;'>
-      <h3>Select Date Range</h3>
-      <div class="form-group"> <!-- Date input -->
-        <label class="control-label" for="start_date">Start Date</label>
-        <input class="form-control" id="start_date" name="start_date" placeholder="MM/DD/YYY" type="date" style="width:500px;" required/>
+      <div style="margin-left: 20px">
+        <button type="submit" class="btn btn-dark">Get Cases</button>
       </div>
-      <div class="form-group"> <!-- Date input -->
-        <label class="control-label" for="end_date">End Date</label>
-        <input class="form-control" id="end_date" name="end_date" placeholder="MM/DD/YYY" type="date" style="width:500px;" required/>
-      </div>
-    </div>
-
-      <div style="margin-left: 20px;">
-        <button type="submit" class="btn btn-dark" >Get Cases</button>
-      </div>
-      </form>
-    </div>
-
+    </form>
   </body>
 </html>

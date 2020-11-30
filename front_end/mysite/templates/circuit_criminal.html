@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Courts Data Project</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Courts Data Project</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'index'%}">Home</a></li>
+          <li><a href="#">Past Stories</a></li>
+          <li><a href="#">How to contribute to the project</a></li>
+          <li><a href="#">Data Access Request</a></li>
+          <li class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle"
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Data Dictionaries<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="{% url 'circuit_civil' %}">Circuit Civil</a></li>
+              <li>
+                <a href="{% url 'circuit_criminal' %}">Circuit Criminal</a>
+              </li>
+              <li><a href="{% url 'district_civil' %}">District Civil</a></li>
+              <li>
+                <a href="{% url 'district_criminal' %}">District Criminal</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div
+      class="panel panel-default"
+      style="width: 800px; margin: auto; margin-bottom: 50px"
+    >
+      <!-- Default panel contents -->
+      <div class="panel-heading">Address</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Address of defendant.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Values here are typically found in this format: City, State Zip
+            (e.g. Richmond, VA 23219). “State” is the postal code abbreviation
+            for a state.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">AmendedCharge</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">The amended charge(if any)</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>See "Charge" for examples</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">AmendedCharge</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Amended charge(if any)</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>See "ChargeType"</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        AmendedCodeSection
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">The amended code section(if any)</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>See "CodeSection" for examples</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">AppealDate</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date of appeal.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ArrestDate</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date of arrest.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Charge</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Indicates the given charge.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Some examples of the many values this field can contain include:
+            <p></p>
+            <p>● DREDGING W/O PERMIT</p>
+            <p>● DRIVE WHILE REV/SUSP</p>
+            <p>● POSS OXYCODONE W/INT</p>
+            <p>● FORGERY</p>
+            <p>● ELUDING POLICE</p>
+            <p>● and so on...</p>
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ChargeType</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Type of charge.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Civil<br />F<br />Felony<br />Infraction<br />Misdemeanor<br />Other
+            (Animal Violations, Bond Appeals)
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Class</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Level of the charge (ex. Class 1 misdemeanor).
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            1<br />2<br />3<br />4<br />5<br />6<br />O<br />U<br />NaN : No
+            entry.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">CodeSection</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Virginia Code section applicable to the crime.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Values here are often, but not always, structured in the following
+            format: &lt;TITLE&gt;.&lt;SECTION&gt;. Some examples:<br />
+            ● 18.2-111 <br />
+            ● 46.2-1080 <br />
+            ● B.46.2-1157 <br />
+            Refer to the Code of Virginia (see:
+            https://law.lis.virginia.gov/vacode/ ) for the text of a code
+            section.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Commencedby</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            How the case was brought to the circuit court.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Ancillary Misdemeanor - when a district court certifies a felony
+            offense to be tried, the court shall also certify any other
+            connected misdemeanors to be tried at same hearing (so long as both
+            parties consent). <br />
+            Direct Indictment - case does right to trial before an inquiry is
+            completed (circumvents the preliminary hearing).<br />
+            Fail To Appear - when a defendant fails to appear at a scheduled
+            hearing.<br />
+            General District Court Appeal<br />
+            Indictment - official statement of charge<br />
+            Information<br />
+            J&Dr Appeal - appealing a final order from juvenile and domestic
+            relations court<br />
+            Not Guilty By Reason Of Insanity<br />
+            Other<br />
+            Presentment - alternative to an indictment, a presentment is a
+            written accusation prepared and returned by the grand jury from its
+            own knowledge or observation (without any bill of indictment before
+            it)<br />
+            Reinstatement - action to reinstate driver’s license or other
+            license.<br />
+            Reinstatement Of Felony Reduced To Misdemeanor - when a felony
+            charge that was reduced to a misdemeanor is reinstated <br />
+            Waiver - D waives his rights to object to the proceeding.<br />
+            NaN : No entry.<br />
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ConcludedBy</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">How the case was concluded.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Dismissal - judge elects to not let case go on any further. A case
+            may be dismissed with or without prejudice. <br />
+            Guilty Plea - when a defendant answers the charges against him or
+            her by admitting to the charges. <br />
+            Nolle Prosequi - when a prosecutor voluntarily ends a case before
+            the trial begins or a verdict rendered.<br />
+            Other<br />
+            Revoked - court revokes the original penalty instated. Transferred -
+            judge moves case to another court, often in a different district.<br />
+            Trial - Judge With Witness - judge decides all questions of fact and
+            law, and witnesses are allowed.<br />
+            Trial - Jury - judge decides questions of law, jury decides
+            questions of fact. <br />
+            Withdrawn Prior To Trial - court decides to not pursue the case
+            after evaluating the merits of the case.<br />
+            NaN : No entry.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        ConcurrentConsecutive
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            When a person is charged with two or more offenses consecutively,
+            they may run concurrently or consecutively. Concurrent is when all
+            sentences run at the same time. If a defendant is charged with a
+            crime in Virginia and charged with a crime in another jurisdiction,
+            he may serve these sentences at the same time. Consecutive is when a
+            defendant must serve the entirety of one sentence before they start
+            serving the other sentence.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Concurrent <br />
+            Consecutive <br />
+            NaN : No Entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Cost</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Costs assessed by court.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0 - 1589635.89</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        CourtDMVSurrender
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            When the court requires the defendant to surrender their driver’s
+            license as part of the sentence.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Forwarded To Dmv <br />
+            License Was Not Surrendered <br />
+            License Was Surrendered And Will Be Held By The Court <br />
+            License Was Surrendered To The Court And Will Be <br />
+            Operators License Suspension Time Is Suspended<br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">DispositionCode</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">The outcome / disposition of the case.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Appeal Withdrawn - a party appealing the trial court’s ruling must
+            give written notice of that withdrawal to the court and opposing
+            counsel before the appeal hearing.<br />
+            Dismissed - judge elects to not let case go on any further, so the
+            entire case is dismissed.<br />
+            Guilty - defendant is found to have committed the charges against
+            him or her. <br />
+            Mistrial - trial is found invalid because of an error in the
+            proceeding.<br />
+            No Indictment Presented - In a criminal felony case, a grand jury is
+            assembled to decide if there is enough evidence to proceed to a full
+            trial. If a grand jury finds that no probable cause exists under
+            which to issue an indictment, then the case will be dismissed as “No
+            Indictment Presented.”<br />
+            Nolle Prosequi - the prosecutor officially abandons part or all of
+            the action they initiated by filing Nolle Prosequi notice (the
+            charges are “nol prossed”). Not Guilty By Reason Of Insanity - not
+            guilty because they had a mental illness at the time of the
+            commission of the crime.<br />
+            Not Guilty/Acquitted - defendant is found to not have committed the
+            acts or omissions charged by the prosecutor. <br />
+            Not True Bill - charges dismissed against a defendant because the
+            grand jury didn’t find enough evidence to charge them with violation
+            of a law. Remanded - the higher court sends the case back to the
+            lower court for further action. <br />
+            Resolved - case was resolved through a plea bargain (lowering or
+            changing the sentence in exchange for a plea). <br />
+            Sentence/Probation Revoked - a court can revoke a sentence or period
+            of probation for any cause it deems sufficient that occurred within
+            the maximum period of original sentence or probation period.<br />
+            NaN : No entry.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">DispositionDate</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            The date the disposition of the case is rendered.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        DriverImprovementClinic
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Court may order a defendant who is charged with traffic infringement
+            to attend a clinic to learn defensive driving techniques that can
+            help them avoid and prevent crashes.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>t : True<br />NaN : No entry</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        DriverRestrictions
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            A court may suspend or revoke a defendant’s driving privileges. Some
+            of the reasons that a court may restrict driving privileges include
+            a failure to pay court costs, unpaid child support, or due to a
+            conviction such as a DUI or a drug related charge.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>t : True<br />NaN : No entry</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Filed</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date a motion is filed.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">FineAmount</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Amount of fine.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0 - 600000</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">FineCostPaid</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Whether or not fines and/or costs were paid.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String / boolean</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>t : True<br />NaN : No entry</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">fips</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Three digit code uniquely identifying a Virginia county or city.
+            “FIPS” is short for “Federal Information Processing Standard” and a
+            list of FIPS codes for Virginia cities and counties can be found
+            here: https://en.wikipedia.org/wiki/List_of_cities_and_counties_i
+            n_Virginia
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>See reference in description above.</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">HearingDate</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date of hearing.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">HungJury</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Describes whether or not hearing involved a jury.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String / boolean</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            f : False <br />
+            t : True<br />NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">HearingPlea</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Plea entered by defendant.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Alford - Defendant pleads that he is innocent, but that the
+            prosecution has enough substantial evidence to prove he is guilty
+            beyond a reasonable doubt. The defendant makes a calculated decision
+            to plead this way. This usually results in the defendant being found
+            guilty of a lesser crime. <br />
+            Guilty - the defendant denies the charges.<br />
+            Nolo Contendere - a “no contest” plea. The defendant doesnt admit or
+            deny the charges, but has the same effect as pleading guilty. This
+            is often plead as part of a plea deal.<br />
+            Not Guilty - the defendant admits to the charges. <br />
+            Tried In Absentia - criminal proceeding in which the defendant is
+            not physically present. <br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">HearingResult</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Result of hearing.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Appeal Withdrawn - the appeal from the original holding is
+            withdrawn. <br />
+            Automatic/Programmatic End To The Hearing -<br />
+            Bench Warrant - Defendant Arrested<br />
+            Bench Warrant - Withdrawn<br />
+            Bench Warrant Issued<br />
+            Bond Denied - court refuses to grant bail (often because defendant
+            presents as a flight risk) and the defendant returns to prison until
+            the next hearing.<br />
+            Bond Forfeited - when a D fails to show up for a court appearance
+            and the company or person who put up the bond is required to pay D’s
+            outstanding bond amount (usually bail bondsmen are only required to
+            pay a small % of the amount if the D doesn’t flee). The court then
+            takes the bond, and it cannot be refunded.<br />
+            Bond Forfeiture Docketed - court schedules a bond forfeiture hearing
+            at a future date.<br />
+            Bond Forfeiture Paid - When the party responsible for paying bail
+            pays the entire outstanding amount.<br />
+            Bond Granted - court releases D from pre-trial detention in exchange
+            for a set amount of money or some other deposit.<br />
+            Bond Not Forfeited<br />
+            Bond Not Revoked<br />
+            Bond Revoked - when a D fails to show up for a court hearing, gets
+            arrested again, or violates any other bail conditions, the court
+            will revoke the bond. This means that the bond amount will be
+            forfeited.<br />
+            Capias Issued - if a criminal D does not show up for court, the
+            judge issues a capias warrant for their arrest. Any officer who can
+            find you will have the power to take you to jail.<br />
+            Capias Withdrawn - the warrant to arrest you is now void, but this
+            does not mean the charge is dismissed.<br />
+            Capias-Defendant Arrested - when the individual who was the subject
+            of the capias order is found and detained.<br />
+            Carried Over - court postpones the hearing for a later date.<br />
+            Carried Over On Req. Of Comm. Atty - hearing postponed to later date
+            on the request of the Commonwealth’s Attorney.<br />
+            Carried Over On Request Of Def.<br />
+            Commonwealth Requests Jury Trial<br />
+            Consolidation Of Trial Dates/Charges<br />
+            Consolidation Of Trial Dates/Charges - Defense Motion<br />
+            Consolidation Of Trial Dates/Charges - Prosecution<br />
+            Motion<br />
+            Continued<br />
+            Continued Generally<br />
+            Continued Motion Of Defense<br />
+            Continued Motion Of Judge<br />
+            Continued Motion Of Prosec. Atty<br />
+            Conviction<br />
+            Def. Attorney Not Prepared<br />
+            Def. Needs Time To Pay Fine/Restitution<br />
+            Def. Needs/Changes Attorney<br />
+            Def. Requests Jury Trial<br />
+            Def. Witness Not Available<br />
+            Defendant Attorney Unavailable<br />
+            Defendant Unavailable<br />
+            Deferred Disp. Terminated<br />
+            Deferred Disposition<br />
+            Denied<br />
+            Dismissed<br />
+            Disposed Of In Advanced<br />
+            Drug Court Terminated<br />
+            Drug Court, Completed Program<br />
+            Drug Court, Continued In Program Subject To Same<br />
+            Terms And Conditions<br />
+            Drug Court, Continued In Program; Inpatient Treatment (Po To Notify
+            Clerk Of Next Drug Court Reporting Date)<br />
+            Drug Court, Continued In Program; Sanction-Attend Drug Court
+            Sessions<br />
+            Drug Court, Continued In Program; Sanction-Community Service<br />
+            Drug Court, Continued In Program; Sanction-Jail Time<br />
+            Drug Court, Continued In Program; Secure Employment<br />
+            Drug Court, Revocation Hearing To Be Set Or Already Set<br />
+            Drug Court, Terminated From Program<br />
+            Granted<br />
+            Granted As Modified<br />
+            Guilty Plea<br />
+            Improper Scheduling<br />
+            Joint Motion<br />
+            Judgment Entered (Fines & Costs)<br />
+            Mental Exam Pending<br />
+            Mental Health Review<br />
+            Mental Health Review-Terminated<br />
+            Merging Charges/Cases<br />
+            Mistrial<br />
+            nan<br />
+            Negotiate/Reject Plea Agreement<br />
+            Negotiate/Reject Plea Agreement - Defense Motion<br />
+            No Appearance<br />
+            No Indictment Presented<br />
+            No Indictment Presented Continued<br />
+            No Longer Under Advisement<br />
+            Nolle Prosequi<br />
+            Not Found<br />
+            Not Guilty<br />
+            Not Guilty By Reason Of Insanity<br />
+            Not Set<br />
+            Not True Bill<br />
+            Ordered Into Drug Court<br />
+            Presentence Ordered<br />
+            Proceedings Deferred<br />
+            Prosecuting Attorney Not Prepared<br />
+            Prosecuting Attorney Unavailable<br />
+            Prosecution Witness Unavailable<br />
+            Referred To Driving School<br />
+            Remanded<br />
+            Required Judge Unavailable<br />
+            Required Judge Unavailable - Defense Motion<br />
+            Required Judge Unavailable - Prosecution Motion<br />
+            Resolved<br />
+            Resolved Order Pending<br />
+            Review Restitution Terminated<br />
+            Revoked - Sentence/Probation<br />
+            Sent<br />
+            Set For Trial<br />
+            Show Cause Dismissed<br />
+            Show Cause Issued<br />
+            Stet Process Docket - Inactive<br />
+            Summons Issued<br />
+            Transferred<br />
+            Tried<br />
+            True Bill<br />
+            True Bill - Capias Issued<br />
+            True Bill - Case Has Not Been Set<br />
+            True Bill - Def. Arrested On Capias<br />
+            True Bill - Reduced To Misdemeanor<br />
+            True Bill -- Case Has Been Set<br />
+            True Bill Capias Withdrawn<br />
+            True Bill Misdemenor Not Set<br />
+            True Bill Misdemenor Set<br />
+            Under Advisement<br />
+            Withdrawn
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">HearingRoom</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">ID of the hearing courtroom</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            These are alphanumeric codes, 1-4 characters in length. There are
+            several hundred codes.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">HearingType</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Type of hearing.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Advise About Attorney Arrangements<br />
+            Appoint Counsel<br />
+            Arraignment<br />
+            Asap<br />
+            Bill Of Particulars<br />
+            Bond<br />
+            Bondsman Show Cause<br />
+            Boot Camp<br />
+            Capias<br />
+            Community Correctional Services<br />
+            Community Diversion Incentive<br />
+            Compel<br />
+            Contempt<br />
+            Continue<br />
+            Court Costs<br />
+            Defendant Adjudication<br />
+            Deferred Disposition<br />
+            Detention Center Incarc. Program<br />
+            Discovery<br />
+            Driving School Return<br />
+            Drug Court<br />
+            Further Disposition<br />
+            Grand Jury<br />
+            Hearing<br />
+            Home Incarceration Program<br />
+            Immediate Sanctions Revocation<br />
+            Juror Show Cause<br />
+            Jury Trial<br />
+            Limine<br />
+            Liquidated Damages<br />
+            Mental Examination<br />
+            Modify Sentence<br />
+            Motion - Other Post-Trial<br />
+            Motion - Other Pre-Trial<br />
+            Motion By Commonwealth To Reduce Sentence<br />
+            Motion For Bond Forfeiture<br />
+            Motions - Filed By Both Parties<br />
+            New Trial<br />
+            Payment Plan<br />
+            Plea<br />
+            Plea And Sentencing<br />
+            Pre-Sentence Report<br />
+            Pre-Trial<br />
+            Probation Extension<br />
+            Probation Reporting<br />
+            Probation Termination<br />
+            Quash<br />
+            Restricted O.L.<br />
+            Review<br />
+            Review Restitution<br />
+            Revocation<br />
+            Sentencing<br />
+            Set Verdict Aside<br />
+            Show Cause<br />
+            Status Hearing<br />
+            Stet Processes Docket<br />
+            Summons<br />
+            Suppress<br />
+            Term<br />
+            To Be Set<br />
+            Transfer Jurisdiction/Venue<br />
+            Trial<br />
+            Under Advisement<br />
+            Weekend Program<br />
+            Withdraw Counsel<br />
+            Witness Show Cause<br />
+            Youthful Offenders Program
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">JailPenitentiary</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Location of prison?</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Jail <br />
+            Penitentiary<br />
+            Time Served<br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">LifeDeath</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Describes if case / outcome (?) was either a life sentence or death
+            penalty.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Life Sentence <br />
+            Death Penalty<br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Locality</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Any area defined by the government below the state level, that taxes
+            its residents or workers, is a tax locality
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Some examples of values included here are:
+            <p></p>
+            <p>● COMMONWEALTH OF VA</p>
+            <p>● NEWPORT NEWS</p>
+            <p>● KING GEORGE COUNTY</p>
+            <p>● KING GEORGE</p>
+            <p>● ISLE OF WIGHT</p>
+            <p>● KING & QUEEN COUNTY</p>
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Military</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Whether or not defendant was in the military. Lists relevant branch,
+            if applicable.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Air Force <br />
+            Army<br />
+            Coast Guard<br />
+            Marines<br />
+            National Guard<br />
+            Navy<br />
+            No<br />
+            Unknown<br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">OffenseDate</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Date of offense</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        OperatorLicenseSuspensionTime
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Number of days that driver’s license was suspended.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0- 36166</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">person_id</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Randomly assigned ID for an individual. This ID is not given by a
+            Court but instead randomly generated by the database. Every query
+            and/or download of this data should result in a new set of randomly
+            generated IDs.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ProbationStarts</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Date on which an individual is released from detention and is placed
+            under supervision.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Release : <br />
+            Sentencing : <br />
+            NaN : No entry.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ProbationTime</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Length of probation in days.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0- 36531</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ProbationType</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Type of probation.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            <p>
+              Indefinite Supervision : No set period of probation. Court will
+              determine when probation ends.
+            </p>
+            <p>
+              Supervised : Reports to a probation officer. This is in lieu of
+              jail time.
+            </p>
+            <p>
+              Unsupervised : Does not report to a probation officer. NaN : No
+              entry.
+            </p>
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">ProgramType</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Specific court-ordered program.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            Alcohol Program (Other Than Asap) <br />
+            Alcohol Safety Action Program<br />
+            Anger Management<br />
+            Batterer's Intervention Group<br />
+            Community Corrections Alternative Program<br />
+            Community Corrections Program<br />
+            Community Corrections Services<br />
+            Community Diversion Incentive<br />
+            Community Service<br />
+            Day Reporting Center<br />
+            Detention Center Incarceration<br />
+            Diversion Center<br />
+            Drug Court<br />
+            Drug Program<br />
+            Dual Treatment Track<br />
+            Home Incarceration Program<br />
+            Mental Health<br />
+            Moral Recognition Therapy<br />
+            Other<br />
+            Pre-Trial Services<br />
+            Sentenced To Boot Camp<br />
+            Shoplifters Group<br />
+            Weekend Work Detail<br />
+            Weekends<br />
+            Work Release<br />
+            Youthful Offenders Program<br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Race</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Race of the defendant.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            “American Indian” <br />
+            “Asian Or Pacific Islander”<br />
+            “Black(Non-Hispanic)”<br />
+            “Hispanic”<br />
+            NaN (no entry)<br />
+            “Other(Includes Not Applicable, Unknown)”<br />
+            “White Caucasian(Non-Hispanic)”
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        RestitutionAmount
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            The amount the defendant must compensate the victim for losses
+            suffered as a result of the crime. Restitution is meant to ensure
+            that the defendant answers directly for his crime, and to fully
+            address the harm he did to another.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>-250 - 7112016</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">RestitutionPaid</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Describes whether or not restitution was paid.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            t : True <br />
+            NaN : No entry
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        RestrictionEffectiveDate
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            The date on which a defendant’s license becomes restricted.
+            Restrictions may include limiting driving to/from work or school or
+            installing an ignition interlock system in the vehicle.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        RestrictionEndDate
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            The date on which the restriction on an individual’s license ends.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Date (YYYY-MM-DD)</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        SentenceSuspended
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            When a judge delays a defendant’s prison sentence in order for the
+            individual to serve a period of probation. Judges often do this in
+            cases involving less serious offenses and/or first time offenders. A
+            judge may suspend a sentence before the sentence is imposed or
+            before it is executed. It can also be conditional (can be revoked if
+            conditions not met) or unconditional (no conditions imposed).
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0 - 36530</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">SentenceTime</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            The time period for which a defendant will serve a sentence.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>Integer.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>0 - 36531</td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">Sex</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">Sex of defendant.</td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            “Female” <br />
+            “Male”
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">TrafficFatality</div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            Whether or not the case involved a traffic fatality.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            t : True <br />
+            f : False <br />
+            NaN : No entry.
+          </td>
+        </tr>
+      </table>
+      <div class="panel-heading" style="margin-top: 25px">
+        VAAlcoholSafetyAction
+      </div>
+      <table class="table">
+        <tr>
+          <th style="width: 120px">Description:</th>
+          <td style="width: 680px">
+            All DUI convictions under Virginia State Code 18.2-271.1 must go
+            through the VA Alcohol Safety Action Program (ASAP). This program
+            provides probation and intervention services for Virginia’s courts
+            through its 24 ASAPs located throughout the Commonwealth.
+          </td>
+        </tr>
+        <tr>
+          <th>Variable Type:</th>
+          <td>String.</td>
+        </tr>
+        <tr>
+          <th>Values:</th>
+          <td>
+            t : True <br />
+            NaN : No entry.
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

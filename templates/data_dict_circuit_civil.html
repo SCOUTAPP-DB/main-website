@@ -1,0 +1,529 @@
+{% extends "sub_page_base.html" %}
+
+{% block content %}
+    <h2>DATA DICTIONARY</h2>
+    <h2>Circuit - Civil</h2>
+    <br><br>
+
+    <p>AppealedDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Date of appeal from district court.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd></td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Bond</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Bond amount in dollars.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.  Data includes “$” but otherwise is a float.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>$0 - $2,600,000</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>CommencedBy</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Describes how the case was commenced.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">Field takes one of the following values: <br><br>
+                <ul>
+                    <li>General District Court Appeal - an appeal from a decision made by the general district court
+                        (where most cases are initially tried). </li>
+                    <li>Initial Filing - first time that the party is filing this case with the court. </li>
+                    <li>Jdr Court Appeal</li>
+                    <li>Other</li>
+                    <li>Reinstatement</li>
+                    <li>Transferred</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>ComplexCase</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">Field takes one of the following values: <br><br>
+                <ul>
+                    <li>Bankruptcy - a debtor files a bankruptcy petition with the court when they cannot repay their
+                        outstanding debts.</li>
+                    <li>Complex - cases that require more intensive judicial management (i.e. many attorneys, many
+                        parties, complicated subject matter, many expert witnesses, extensive discovery, parties from
+                        many jurisdictions).</li>
+                    <li>Habitual Offender - a defendant who has been convicted of multiple offenses may be declared a habitual
+                        offender. Once you are declared a habitual offender, any new infractions will be punished more
+                        severely.</li>
+                    <li>Information</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>ConcludedBy</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Describes how the case was concluded.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">Field takes one of the following values: <br><br>
+                <ul>
+                    <li>Affidavit For Divorce - file given to court as part of initial request to dissolve the
+                        marriage. It is an oath by both spouses that they believe the marriage can’t be fixed and they
+                        agree to call off their marriage legally. They may also be required to file a financial
+                        affidavit to assist the court in a division of assets later. </li>
+                    <li>Default Judgment - one party has failed to perform a court-ordered action and that failure has
+                        impacted the case so substantially the judge finds in favor of the other party (ex. When a
+                        defendant fails to go before the court repeatedly). </li>
+                    <li>Deposition - a sworn out of court testimony conducted by one of the party’s lawyers.
+                        Depositions are conducted as part of the discovery process before a trial or settlement.
+                        Witnesses can be subpoenaed to attend a deposition, but both party’s lawyers are usually
+                        present. </li>
+                    <li>Dismissal - termination of the action without a final judgement. In a civil case, this is often
+                        achieved when the defendant motions to dismiss the case for failure to state a claim upon
+                        which relief may be granted (no real legal or factual basis for the claim). </li>
+                    <li>Mediation - instead of revolving issues in a formal court setting with a judge, the parties
+                        discuss their disputes with the assistance of a impartial third person(s) who have been
+                        trained to be mediators. A mediation is often recommended if the judge believes this might be
+                        a better avenue to figure out the issue at hand or the parties schedule it during a
+                        settlement conference.</li>
+                    <li>Nonsuit - judge decides an action is a nonsuit when a P fails to provide sufficient evidence
+                        or make an adequate legal showing for the judge to rule in the plaintiff's favor. It is like
+                        a dismissal, but a nonsuit allows the plaintiff to correct a flaw in their case and
+                        re-file the action without any penalty. </li>
+                    <li>Other</li>
+                    <li>Purged After 1 Year - when certain evidence (police reports, admin records, traffic records)
+                        or an entire charge in a defendant’s record is expunged (erased or thrown out) after 1
+                        year. </li>
+                    <li>Purged After 2 Years - when certain evidence or a charge in a defendant's record is expunged
+                        (erased or thrown out) after 2 years. </li>
+                    <li>Purged After 3 Years - when certain evidence or a charge in a defendant’s record is expunged
+                        (erased or thrown out) after 3 years. </li>
+                    <li>Report By Commissioner</li>
+                    <li>Resolved - all issues before the court are resolved and there is no need for further judicial
+                        intervention. </li>
+                    <li>Settlement - both parties agree to settle their issues before a trial in order to avoid lengthy
+                        litigation. </li>
+                    <li>Settlement/Nonsuit/Vol. Dismissal - for some reason, there is no justiciable issue in front
+                        of the court. </li>
+                    <li>Transferred - the case is transferred and moved to another court. </li>
+                    <li>Trial - Judge With Witnesses - a so-called “bench trial” occurs when there is only a judge and
+                        no jury. The ultimate decision maker is the judge, and he listens to witnesses to decide if
+                        they are credible and how much to weigh their testimony. These are much more common in civil
+                        cases. </li>
+                    <li>Trial - Jury - a trial with a jury occurs when it is a jury of the defendant’s peers who decide
+                        the ultimate outcome. A jury trial is guaranteed for criminal defendants who are charged with
+                        serious offenses that subject the defendant to prison time. </li>
+                    <li>Withdrawn Prior To Trial - a party withdraws their action before trial begins. </li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>DateOrderedToMediation</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Date parties were ordered to mediation.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Defendant1Attorney, Defendant2Attorney, Defendant3Attorney</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Name of defendant attorney(s).</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Defendant1TradingAs, Defendant2TradingAs, Defendant3TradingAs</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Defendant(s) name of business trading under an assumed name (e.g “doing business as”).</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Filed</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Date filed.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>FilingFeePaid</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Indicates whether or not filing fee was paid.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String / boolean</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">Field takes one of the following values: <br><br>
+                <ul>
+                    <li>t : True</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>FilingType</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Type of court filing.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">Field takes one of the following values: <br><br>
+                <ul>
+                    <li>(AOE ) Not In Translation Table</li>
+                    <li>(AOL ) Not In Translation Table</li>
+                    <li>(CTPT) Not In Translation Table</li>
+                    <li>(DIST) Not In Translation Table</li>
+                    <li>(GASC) Not In Translation Table</li>
+                    <li>(HAB ) Not In Translation Table</li>
+                    <li>(INTR) Not In Translation Table</li>
+                    <li>(SERV) Not In Translation Table</li>
+                    <li>(TLAW) Not In Translation Table</li>
+                    <li>Accounting - a financial inventory of assets, debts, income, expenditures, and other items of a party. These accounting filings are often used in divorce cases to determine allocation of marital assets or estate administration. </li>
+                    <li>Adult Protection - usually to protect an eledery person or an adult with mental disabilities from abuse from those who are supposed to be taking care of them. The court may grant this order and authorize the provision of adult protective services on an emergency basis.</li>
+                    <li>Aid And Guidance - a party request assistance from the court in filing a certain motion?</li>
+                    <li>Aid And Guidence</li>
+                    <li>Amend Death Certificate - state registrar can change information of a death certificate if a surviving family member/appointed estate manager files the required affidavits and documents (ex. Wrong name, military status, date of death)</li>
+                    <li>Annexation - a government/municipality obtains more territory by annexing (grabbing) that territory </li>
+                    <li>Annulment - when a court declares your marriage as not legally valid (as if it never occurred). This is different from a legal divorce, where the marriage is still seen as once valid. </li>
+                    <li>Appeal - Abc Board - one can appeal an Alcohol Beverage Control Authority disciplinary action after they are punished for an ABC law violation, contested license application or franchise issue.</li>
+                    <li>Appeal - Agriculture & Consumer Services</li>
+                    <li>Appeal - Board Of Zoning</li>
+                    <li>Appeal - Compensation Board</li>
+                    <li>Appeal - Employment Commission</li>
+                    <li>Appeal - Local Government</li>
+                    <li>Appeal - Marine Resources Commission</li>
+                    <li>Appeal - Voter Registration</li>
+                    <li>Appointment Of Church Trustee, Substitute Fiduciaries</li>
+                    <li>Appointment Of Guardian And/Or Conservator</li>
+                    <li>Approval Of Right To Be Eligible To Vote</li>
+                    <li>Approval Of Transfer Of Structured Settlement</li>
+                    <li>Asbestos Litigation</li>
+                    <li>Attachment - court order seizing property. Can be used as a pre-trial provisional remedy or to enforce a final judgement. </li>
+                    <li>Bill Of Complaint - formal statement of the facts and a prayer for relief. In Virginia, the bill of complaint is required in divorce proceedings/ In the bill of complaint, a party lays out all of the facts that the court may consider in the divorce proceedings, including separation of assets and support. </li>
+                    <li>Bond Appeal From District Court - when a civil D is given an adverse decision, he can appeal this decision. However, simply appealing doesn’t stop a creditor from trying to come after the D for the judgement. Therefore, he is required to rile a “supercedeas” bond with the court to effectively stay the execution/collection of the civil judgement. In other words, he has to pay to stop creditors from coming after him during the appeal.  </li>
+                    <li>Bond Forfeiture</li>
+                    <li>Bond Forfeiture Appeal</li>
+                    <li>Change Of Sex</li>
+                    <li>Child Abuse & Neglect - Unfounded</li>
+                    <li>Civil Committment Of A Sexually Violent Predator</li>
+                    <li>Civil Contempt</li>
+                    <li>Claim Impleading Third Party Def.</li>
+                    <li>Complaint - Catch-All</li>
+                    <li>Compromise Settlement (Injury/Wrongful Death)</li>
+                    <li>Condemnation</li>
+                    <li>Confessed Judgment</li>
+                    <li>Conservator Of The Peace</li>
+                    <li>Construe Will</li>
+                    <li>Contract Action</li>
+                    <li>Correct/Erron. State/Local Taxes</li>
+                    <li>Counter Claim</li>
+                    <li>Cross Claim</li>
+                    <li>Declaratory Judgment</li>
+                    <li>Declare Death</li>
+                    <li>Delinquent Taxes</li>
+                    <li>Detinue</li>
+                    <li>Divorce</li>
+                    <li>Divorce Counterclaim Responsive Pleading</li>
+                    <li>Ejectment</li>
+                    <li>Encumber/Sell Real Estate</li>
+                    <li>Enforce Vendor's Lien</li>
+                    <li>Escheat</li>
+                    <li>Establish Boundaries</li>
+                    <li>Expunge</li>
+                    <li>Forfeiture Of Property Or Money</li>
+                    <li>Freedom Of Information</li>
+                    <li>Gapl-Abstract Of Judgment</li>
+                    <li>Gapl-Admin License Suspension</li>
+                    <li>Gapl-Attachment</li>
+                    <li>Gapl-Bond Forfeiture (Show Cause)</li>
+                    <li>Gapl-Counterclaim</li>
+                    <li>Gapl-Cross-Warrant</li>
+                    <li>Gapl-Detinue</li>
+                    <li>Gapl-Detinue Seizure</li>
+                    <li>Gapl-Distress Seizure</li>
+                    <li>Gapl-Impoundment</li>
+                    <li>Gapl-Mechanic's Lien</li>
+                    <li>Gapl-Motion For Judgment</li>
+                    <li>Gapl-Motor Carrier</li>
+                    <li>Gapl-Other</li>
+                    <li>Gapl-Overweight Citation</li>
+                    <li>Gapl-Petition To Restore Right To Bear Arms</li>
+                    <li>Gapl-Restricted License</li>
+                    <li>Gapl-Tenant's Assertion</li>
+                    <li>Gapl-Third-Party Claim</li>
+                    <li>Gapl-Unlawful Detainer</li>
+                    <li>Gapl-Warrant In Debt</li>
+                    <li>Gapl-Zoning Violation</li>
+                    <li>Garnishment</li>
+                    <li>General District Court Appeal</li>
+                    <li>General District Court Removal</li>
+                    <li>General Tort Liability</li>
+                    <li>Grievance Procedures</li>
+                    <li>Guardian Appointment</li>
+                    <li>Guardian For Minor By Clerk</li>
+                    <li>Guardian For Minor By Court</li>
+                    <li>Injunction</li>
+                    <li>Intentional Tort</li>
+                    <li>Interdiction</li>
+                    <li>Interpleader</li>
+                    <li>Interrogatory Summons</li>
+                    <li>Japl-Bond Forfeiture Show Cause</li>
+                    <li>Japl-Criminal Support</li>
+                    <li>Japl-Remand Support</li>
+                    <li>Japl-Show Cause</li>
+                    <li>Japl.Civil Support</li>
+                    <li>Japl.Restricted License For Non-Support</li>
+                    <li>Judgment Lien (Bill To Enforce)</li>
+                    <li>Judicial Review</li>
+                    <li>Landlord/Tenant</li>
+                    <li>Law Enforcement Officer Petition</li>
+                    <li>License: No such file or directory</li>
+                    <li>Mechanic's Lien</li>
+                    <li>Medical Malpractice</li>
+                    <li>Motion For Judgment</li>
+                    <li>Motion For Judgment - Asbestos Litigation</li>
+                    <li>Motor Vehicle</li>
+                    <li>Name Change</li>
+                    <li>nan</li>
+                    <li>Order To Sever</li>
+                    <li>Partition</li>
+                    <li>Pawnbroker License Application</li>
+                    <li>Petition</li>
+                    <li>Petition-Administrative Appeal(Includes Appeals From Local Govt's, Boards, Agencies & Commissions</li>
+                    <li>Product Liability</li>
+                    <li>Quiet Title</li>
+                    <li>Recognize Foreign Country Judgment</li>
+                    <li>Referendum Elections</li>
+                    <li>Reformation Of Trust</li>
+                    <li>Reinstatement (General)</li>
+                    <li>Reinstatement Of Driving Privileges</li>
+                    <li>Removal</li>
+                    <li>Restore Driving Privilege</li>
+                    <li>Restore Firearms Rights Felony</li>
+                    <li>Restore Firearms Rights Review</li>
+                    <li>Rites Of Marriage Celebrant</li>
+                    <li>Separate Maintenance</li>
+                    <li>Separate Maintenance Counterclaim Responsive Pleading</li>
+                    <li>Specific Performance</li>
+                    <li>Standby Guardian/Conservator</li>
+                    <li>Termination Of Mineral Rights</li>
+                    <li>Transfer</li>
+                    <li>Transfer From Chancery</li>
+                    <li>Trust - Impress/Declare/Create</li>
+                    <li>Uniform Transfers To Minors Act</li>
+                    <li>Unlawful Detainer</li>
+                    <li>Vehicle Confiscation</li>
+                    <li>Will Construction</li>
+                    <li>Writ Of Certiorari</li>
+                    <li>Writ Of Habeas Corpus</li>
+                    <li>Writ Of Mandamus</li>
+                    <li>Writ Of Prohibition</li>
+                    <li>Writ Of Quo Warranto</li>
+                    <li>Wrongful Death</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>FinalOrderDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Date of final order.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>fips</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Three digit code uniquely identifying a Virginia county or city.  “FIPS” is short for
+                “Federal Information Processing Standard” and a list of FIPS codes for Virginia cities and counties
+                can be found here:  https://en.wikipedia.org/wiki/List_of_cities_and_counties_in_Virginia</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">See reference in description above.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Judgment</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">“Winning” party for a case.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>Defendant</li>
+                    <li>Other</li>
+                    <li>Plaintiff</li>
+                    <li>NaN : No entry</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>NumberofDefendants</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Number of defendants.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Integer.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">1 - 1257</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>NumberofPlaintiffs</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Number of plaintiffs.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Integer.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">0 - 465</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Plaintiff1Attorney, Plaintiff2Attorney, Plaintiff3Attorney</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Name of plaintiff attorney(s).</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Plaintiff1TradingAs, Plaintiff2TradingAs, Plaintiff3TradingAs</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Plaintiff(s) name of business trading under an assumed name (e.g “doing business as”).</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String</td>
+        </tr>
+    </table>
+    <br><br>
+{% endblock content %}

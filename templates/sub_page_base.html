@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{% block title %}State Court Trial Data (SCOUT){% endblock %}</title>
+  	{% block metadescription %}<meta name="description" content="More than a decade of Virginia Court data available for download">{% endblock %}
+  	{% block metakeywords %}<meta name="keywords" content="court data, dataset, Circuit Court, District Court, Virginia, cases, felony, misdemeanor, outcomes, race, sex, sentence, download, by year">{% endblock %}
+	<!-- Include Bootstrap stuff -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- Include favicon -->
+	<link rel="shortcut icon" href="https://legaldatalab.law.virginia.edu/bl-themes/ldl_2019/img/favicon.ico" type="image/x-icon">
+  	<!-- Include Bootstrap CSS file bootstrap.css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<!-- Include Font Awesome for footer icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  	<!-- Styles -->
+  	<link rel="stylesheet" type="text/css" href="https://legaldatalab.law.virginia.edu/bl-themes/ldl_2019/css/footer.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+	<header style="max-height: 200px;">
+		<!--Image by Pexels from Pixabay-->
+		<img id="headpic" src="{% static 'img/archive-1850170_crop.jpg' %}" alt="Shelves of archival boxes and binders" />
+		<h1>STATE COURT TRIAL DATA</h1>
+	</header>
+
+	{% include "menu.html" %}
+
+	<div class="content">
+      	<div>
+			{% block content %}
+			{% endblock content %}
+			<br/><br/>
+		</div>
+	</div>
+
+	{% include "footer.html" %}
+
+</body>
+</html>

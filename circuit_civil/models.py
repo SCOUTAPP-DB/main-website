@@ -1,0 +1,31 @@
+from django.db import models
+
+
+class CircuitCivil(models.Model):
+
+    fips = models.CharField(max_length=3, blank=True, null=True)
+    filed_date = models.CharField(max_length=10, blank=True, null=True)
+    filing_type = models.CharField(max_length=100, blank=True, null=True)
+    filing_fee_paid = models.CharField(max_length=3, blank=True, null=True)
+    number_of_plaintiffs = models.CharField(max_length=5, blank=True, null=True)
+    number_of_defendants = models.CharField(max_length=6, blank=True, null=True)
+    commenced_by = models.CharField(max_length=30, blank=True, null=True)
+    bond = models.CharField(max_length=15, blank=True, null=True)
+    complex_case = models.CharField(max_length=20, blank=True, null=True)
+    date_ordered_to_mediation = models.CharField(max_length=3, blank=True, null=True)
+    judgment = models.CharField(max_length=10, blank=True, null=True)
+    final_order_date = models.CharField(max_length=10, blank=True, null=True)
+    appealed_date = models.CharField(max_length=10, blank=True, null=True)
+    concluded_by = models.CharField(max_length=35, blank=True, null=True)
+    plaintiff_1_trading_as = models.CharField(max_length=30, blank=True, null=True)
+    plaintiff_2_trading_as = models.CharField(max_length=30, blank=True, null=True)
+    plaintiff_3_trading_as = models.CharField(max_length=30, blank=True, null=True)
+    plaintiff_1_attorney = models.CharField(max_length=35, blank=True, null=True)
+    plaintiff_2_attorney = models.CharField(max_length=35, blank=True, null=True)
+    plaintiff_3_attorney = models.CharField(max_length=35, blank=True, null=True)
+    defendant_1_trading_as = models.CharField(max_length=30, blank=True, null=True)
+    defendant_2_trading_as = models.CharField(max_length=30, blank=True, null=True)
+    defendant_3_trading_as = models.CharField(max_length=30, blank=True, null=True)
+    defendant_1_attorney = models.CharField(max_length=35, blank=True, null=True)
+    defendant_2_attorney = models.CharField(max_length=35, blank=True, null=True)
+    defendant_3_attorney = models.CharField(max_length=35, blank=True, null=True)

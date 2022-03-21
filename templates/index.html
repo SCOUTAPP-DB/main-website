@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	{% block title %}
+		<title>State Court Trial Data (SCOUT)</title>
+	{% endblock %}
+  	{% block metadescription %}
+		<meta name="description" content="More than a decade of Virginia Court data available for download">
+	{% endblock %}
+  	{% block metakeywords %}
+		<meta name="keywords" content="court data, dataset, Circuit Court, District Court, Virginia, cases, felony, misdemeanor, outcomes, race, sex, sentence, download, by year">
+	{% endblock %}
+
+	<!-- Include Bootstrap stuff -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- Include favicon -->
+	<link rel="shortcut icon" href="https://legaldatalab.law.virginia.edu/bl-themes/ldl_2019/img/favicon.ico" type="image/x-icon">
+  	<!-- Include Bootstrap CSS file bootstrap.css -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  	<!-- Include Font Awesome for footer icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  	<!-- Styles -->
+  	<link rel="stylesheet" type="text/css" href="https://legaldatalab.law.virginia.edu/bl-themes/ldl_2019/css/footer.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+	<header>
+		<!--Image by Pexels from Pixabay-->
+		<img id="headpic" src="{% static 'img/archive-1850170_crop.jpg' %}" alt="Shelves of archival boxes and binders" />
+		<h1>STATE COURT TRIAL DATA</h1>
+	</header>
+
+	{% include "menu.html" %}
+
+  	<div class="content">
+      	<div>
+			{% block content %}
+		  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis urna id volutpat lacus laoreet non curabitur gravida arcu. Quam pellentesque nec nam aliquam. Metus dictum at tempor commodo ullamcorper a lacus. At augue eget arcu dictum varius duis at consectetur. Nisl condimentum id venenatis a condimentum vitae sapien. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Cras tincidunt lobortis feugiat vivamus at augue. Erat imperdiet sed euismod nisi porta lorem. Ornare arcu dui vivamus arcu felis bibendum. Tortor consequat id porta nibh venenatis cras sed felis eget. Urna et pharetra pharetra massa massa ultricies mi quis. Vel pharetra vel turpis nunc eget. Velit egestas dui id ornare arcu. Quis hendrerit dolor magna eget.</p>
+		  	<p>Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Nisl vel pretium lectus quam id. Tortor vitae purus faucibus ornare suspendisse sed nisi. Bibendum enim facilisis gravida neque. Pellentesque dignissim enim sit amet venenatis. Mi eget mauris pharetra et ultrices neque. Duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Tellus integer feugiat scelerisque varius morbi enim. Fames ac turpis egestas maecenas pharetra convallis posuere morbi leo. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Ut consequat semper viverra nam libero justo laoreet. Quam adipiscing vitae proin sagittis nisl rhoncus mattis.</p>
+		  	<p>Potenti nullam ac tortor vitae. Interdum velit euismod in pellentesque massa. Lectus magna fringilla urna porttitor. Proin libero nunc consequat interdum varius sit amet. Erat nam at lectus urna. Urna nec tincidunt praesent semper feugiat. Tempor id eu nisl nunc mi. Bibendum arcu vitae elementum curabitur vitae nunc sed. Diam sollicitudin tempor id eu. Scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Turpis egestas pretium aenean pharetra.</p>
+		  	<p>Suscipit adipiscing bibendum est ultricies integer quis auctor elit. Risus at ultrices mi tempus imperdiet. Nulla malesuada pellentesque elit eget gravida cum. Tincidunt dui ut ornare lectus. Massa vitae tortor condimentum lacinia quis vel eros donec ac. Risus nec feugiat in fermentum posuere urna nec tincidunt praesent. Etiam non quam lacus suspendisse faucibus interdum posuere lorem. Quam nulla porttitor massa id. Tincidunt id aliquet risus feugiat in ante metus dictum at. Pharetra magna ac placerat vestibulum. Tincidunt arcu non sodales neque sodales ut etiam. At elementum eu facilisis sed odio morbi. Ridiculus mus mauris vitae ultricies.</p>
+		  	<p>Risus feugiat in ante metus dictum at tempor. Aliquam malesuada bibendum arcu vitae elementum. Purus in mollis nunc sed id semper risus. Euismod quis viverra nibh cras pulvinar mattis nunc sed. Suspendisse sed nisi lacus sed viverra. Dui vivamus arcu felis bibendum ut tristique. Orci porta non pulvinar neque laoreet suspendisse. Ac orci phasellus egestas tellus rutrum tellus. Aliquam id diam maecenas ultricies mi. Eget nunc lobortis mattis aliquam. Semper eget duis at tellus at urna. Varius duis at consectetur lorem.</p>
+		  	{% endblock %}
+	  	</div>
+  	</div>
+
+	<footer class="footer bg-dark">
+		<div class="flex-ldlfoot container">
+			<div class="foot_logo">
+				<a href="//legaldatalab.law.virginia.edu/">
+					<img style="margin: 0 auto;" src="//legaldatalab.law.virginia.edu/bl-themes/ldl_2019/img/LDL_logo_2_2x.png" alt="UVA Law Legal Data Lab" />
+				</a>
+			</div>
+			<div>
+				<p id="footer-heading" class="text-white text-uppercase">Contact the Legal Data Lab</p>
+				<ul id="footer-contact" class="text-white">
+				<li><i class="fas fa-map-marker-alt"></i> Arthur J. Morris Law Library, 2nd Floor<br />
+				<span style="padding-left:23px;">580 Massie Rd.</span><br />
+				<span style="padding-left:23px;">Charlottesville, VA 22903</span></li>
+				<li><i class="fas fa-phone" style="transform: rotate(90deg);"></i> <a href="tel:+1-434-924-4730">(434) 924-4730</a></li>
+				<li><i class="far fa-envelope"></i> <a href="mailto:legaldatalab@law.virginia.edu">Email</a></li>
+			</ul>
+			</div>
+		</div>
+		<div style="text-align: center;">
+			<ul class="uva-links text-white text-uppercase" style="padding: 0px; margin-bottom: 0px;">
+				<li><a href="https://www.virginia.edu/">UVA</a></li>
+				<li><a href="https://law.virginia.edu/">UVA Law</a></li>
+				<li><a href="https://www.library.virginia.edu/">UVA Libraries</a></li>
+				<li><a href="https://www.law.virginia.edu/library">Law Library</a></li>
+			</ul>
+			<!-- Social Networks -->
+			<ul class="uva-links text-white" style="padding: 0px; margin-bottom: 0px;">
+				<li>
+					<a href="https://github.com/legal-data-lab">
+						<img style="width:1rem;" src="//legaldatalab.law.virginia.edu/bl-themes/ldl_2019/img/github.svg" alt="Github" />
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/UVALegalDataLab">
+						<img style="width:1rem;" src="//legaldatalab.law.virginia.edu/bl-themes/ldl_2019/img/twitter.svg" alt="Twitter" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<p class="m-0 text-center text-white text-uppercase" style="font-size:smaller; padding-bottom: 20px;">&copy; <?php echo date("Y"); ?>&nbsp;by the Rector and Visitors of the University of Virginia</p>
+	</footer>
+
+</body>
+</html>

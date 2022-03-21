@@ -1,0 +1,690 @@
+{% extends "sub_page_base.html" %}
+
+{% block content %}
+    <h2>DATA DICTIONARY</h2>
+    <h2>District - Civil</h2>
+    <br><br>
+
+    <p>Address</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">City, state (postal abbreviation), and zip code.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>AnswerDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>AppealDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Date of appeal.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>AppealedBy</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>Defendant 1</li>
+                    <li>Defendant 2</li>
+                    <li>Defendant 3</li>
+                    <li>Defendant 4</li>
+                    <li>Plaintiff 1</li>
+                    <li>Plaintiff 2</li>
+                    <li>Plaintiff 3</li>
+                    <li>Plaintiff 4</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>AttorneyFees</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Integer.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">-1 - 1,717,067</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>CaseType</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>Abstract Of Judgment</li>
+                    <li>Administrative License Suspension</li>
+                    <li>Attachment</li>
+                    <li>Bond Forfeiture</li>
+                    <li>Capias</li>
+                    <li>Counterclaim</li>
+                    <li>Cross-Claim</li>
+                    <li>Detinue</li>
+                    <li>Detinue Seizure</li>
+                    <li>Distress Seizure</li>
+                    <li>Garnishment</li>
+                    <li>Impoundment</li>
+                    <li>Interrogatory/Judge</li>
+                    <li>Mechanic's Lien</li>
+                    <li>Motion For Judgment</li>
+                    <li>Motor Carrier</li>
+                    <li>Non Case</li>
+                    <li>Other</li>
+                    <li>Overweight Citation</li>
+                    <li>Petition Right To Bear Arms</li>
+                    <li>Restricted License</li>
+                    <li>Sale Of Tobacco To Minor</li>
+                    <li>Show Cause</li>
+                    <li>Tenant's Assertion</li>
+                    <li>Third-Party claim</li>
+                    <li>Unlawful Detainer</li>
+                    <li>Warrant In Debt</li>
+                    <li>Zoning Violation</li>
+                    <li>NaN : no entry</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Costs</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Integer.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">0 - 9800</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>DateSatisfactionFiled</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">After a judgement is paid in full, the party that won the case (judgement creditor)
+                must acknowledge that the judgement was satisfied by filing a satisfaction of Judgment form with
+                the court clerk. This informs the court that the losing party has met their obligations in full.
+                This term designates the date that the successful party files this form. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>DebtType</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The type of monetary obligation that you owe based on the case before the court.
+                Types of debt include fines, fees, surcharges, interest, collection costs, payment plan costs,
+                and penalties, and restitution. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">Any variation of the following.  Can include multiple entries in the same field:<br><br>
+                <ul>
+                    <li>Contract</li>
+                    <li>Items</li>
+                    <li>Note</li>
+                    <li>Open Account</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Defendant1DBATA, Defendant2DBATA, Defendant3DBATA</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Doing Business As / Trading As</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">DBA name or trading name.</td>
+        </tr>
+    </table>
+    <br><br>
+
+
+    <p>Defendant1Address, Defendant2Address, Defendant3Address</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Defendant address.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">City, state (postal abbreviation), and zip code.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Defendant1Attorney, Defendant2Attorney, Defendant3Attorney</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Defendant attorney.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc"></td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>FiledDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>fips</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Three digit code uniquely identifying a Virginia county or city.  “FIPS” is short for
+                “Federal Information Processing Standard” and a list of FIPS codes for Virginia cities and counties
+                can be found here:  https://en.wikipedia.org/wiki/List_of_cities_and_counties_in_Virginia</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">See reference in description above.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>FurtherCaseInformation</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Three digit code uniquely identifying a Virginia county or city.  “FIPS” is short for
+                “Federal Information Processing Standard” and a list of FIPS codes for Virginia cities and counties
+                can be found here:  https://en.wikipedia.org/wiki/List_of_cities_and_counties_in_Virginia</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">These notes can take any form.  Some examples:<br><br>
+                <ul>
+                    <li>DISMISS WITH PREJUIDICE PER ORDER ENTERED 1-12-17</li>
+                    <li>DEF SHALL ABATE VIOLATIONS ON/BEFORE 020417</li>
+                    <li>VACATED AND DISMISSED PER ORDER 031317</li>
+                    <li>BANRUPTCY FILING RECEIVED 12-11-17</li>
+                    <li>BILL OF PART DUE 9/9/16. GR OF DEF DUE 10/14/16. 10:00 TRIAL</li>
+                    <li>TRIAL: 2-10-17 10AM  BOP: 12-9-16  GRDS OF DEF: 1-13-17</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Garnishee</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">A third party (usually a bank or employer) who receives a court order to not release
+                funds that are owed to a customer or employee until the court makes a further order. For example,
+                party A owes a creditor a lot of money, but A only has his salary (no savings he can pay the debt
+                with), so the creditor initiates a “Garnishment proceeding” to ensure payment. If this proceeding is
+                successful, a portion of A’s salary is sent to the creditor every month by the employer (who is the
+                garnishee).</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">Name of bank or employer.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>GarnisheeAnswer</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The form the garnishee (third party holding a debtor’s property or assets) is
+                required to fill out under oath and in writing. They must return the garnishee answer to the court,
+                debtor, and creditor in a garnishee proceeding. A garnishee proceeding is initiated by a creditor in
+                order to seize the property or assets of the debtor. A court may order the garnishee to hold the
+                debtor’s wages to pay the creditor.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>Check Received</li>
+                    <li>Written Answer</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>HomesteadExemptionWaived</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The Homestead Exemption allows homeowners to protect some of their equity during
+                bankruptcy proceedings ($5,000 from home or personal property covered by the Homestead Act). This
+                Exemption may be waived if a person declares in a bond, bill, note or other instrument that he or
+                she waives the exemption from liability on the property or estate. If the waiver is clear, the
+                property usually exempted under the Homestead exemption is now liable to be subjected for any
+                obligations under that contract. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String / boolean.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>f : False</li>
+                    <li>t : True</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>InterestAward</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The interest that accrues on any judgement, calculated as the interest of the
+                difference between the amount of just compensation awarded to the petitioner and the amount the
+                petitioner received from the fund paid into the court. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>15% INTEREST FROM 091715</li>
+                    <li>29.90 % FROM 062515</li>
+                    <li>8.00  % FROM 11112016</li>
+                    <li>18.00 % FROM 12062016</li>
+                    <li>8.1  % FROM 012317</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>IsJudgmentSatisfied</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Whether the party to which the judgement was ordered fulfilled all legal
+                obligations, usually that the full amount of the judgement has been paid to the plaintiff. A
+                Satisfaction of Judgement is a legal document that shows that the plaintiff has been paid what
+                she owes under the original judgement.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String / boolean.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Values:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>t : True</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Judgment</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The decision of a court as to the rights and liabilities of the parties to proceeding
+                or other legal action. A judgement may include a specific court order and the reasoning behind the
+                ultimate decision. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>Case Dismissed</li>
+                    <li>Defendant</li>
+                    <li>Dismissed</li>
+                    <li>Granted</li>
+                    <li>Non-suit</li>
+                    <li>Not Found/Unserved</li>
+                    <li>Other</li>
+                    <li>Plaintiff</li>
+                    <li>Removed To Circuit Court</li>
+                    <li>Transfer/Change of Venue</li>
+                    <li>NaN : no entry</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>NumberofChecksReceived</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The number of check payments that the court has received from a party as part of a
+                proceeding. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Integer.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">0 - 99</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>OtherAmount</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">The number of check payments that the court has received from a party as part of a
+                proceeding. </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Float.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">0 - 962049.12</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>OtherAwarded</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Name of plaintiff’s attorney.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">Some examples:<br><br>
+                <ul>
+                    <li>$34.76 LATE FEE/ $30.00 ADMIN FEE</li>
+                    <li>$73.32 LATE PENALTY/ $30.00 ADMIN COST</li>
+                    <li>PET RENT $100.00</li>
+                    <li>POSS ONLY GRANTED 2/9/17 & DISMISS AS TO MONEY ON 4/25/17</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Plaintiff1DBATA, Plaintiff2DBATA, Plaintiff3DBATA</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Plaintiff doing business as / trading as.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">DBA / trading as name.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Plaintiff1Address, Plaintiff2Address, Plaintiff3Address</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Plaintiff address.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">City, state (postal abbreviation), and zip code.</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Plaintiff1Attorney, Plaintiff2Attorney, Plaintiff3Attorney</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">Name of plaintiff’s attorney.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">Some examples:<br><br>
+                <ul>
+                    <li>COMPTON &DULING, L.C</li>
+                    <li>WEISS F WILKS</li>
+                    <li>SYKES & LEVY, P.C.</li>
+                    <li>NO ATTY(ODOR, IVAN)</li>
+                    <li>COMMUINITY RES</li>
+                    <li>ROBERT J BURSTEIN</li>
+                    <li>GOODNER/AGT</li>
+                    <li>HENNESSEY, THOMAS</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>Possession</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">String.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">
+                <ul>
+                    <li>Granted</li>
+                    <li>Immediate</li>
+                    <li>Possession</li>
+                    <li>NaN : No entry.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>PrincipalAmount</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc"></td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Integer.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Value:</td>
+            <td class="var-desc">0 - 8,028,766</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>WritIssuedDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">A writ is a legal document issued by a judge or other administrative/judicial body
+                that compels someone to perform or refrain from performing an act. The Writ Issued Date is the date
+                on which the court issues this order.</td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>WritOfEvictionIssuedDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">A writ is a legal document issued by a judge or other administrative/judicial body
+                that compels someone to perform or refrain from performing an act. The writ of eviction date is the
+                date on which the court issued an order for a tenant to be removed from a dwelling.
+            </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <p>WritOfFieriFaciasIssuedDate</p>
+    <table class="data-dict">
+        <tr>
+            <td class="var-name">Description:</td>
+            <td class="var-desc">A writ is a legal document issued by a judge or other administrative/judicial body
+                that compels someone to perform or refrain from performing an act. The writ of fieri facias date is the
+                date on which the court issued an order for a creditor to obtain money, bank notes, goods, etc. from
+                a defendant/debtor.
+            </td>
+        </tr>
+        <tr>
+            <td class="var-name">Variable Type:</td>
+            <td class="var-desc">Date (yyyy-mm-dd)</td>
+        </tr>
+    </table>
+    <br><br>
+
+{% endblock content %}

@@ -16,3 +16,4 @@
 */*/*/migrations/
 *secrets.js
 *node_modules/
+/scout/settings.py
